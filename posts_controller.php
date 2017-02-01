@@ -44,13 +44,13 @@
       function home() {
           $resource = 'posts';
           $action = 'home';
-          require('views/layout/application.php');
+          require('views/layout/CustomApplication.php');
       }
 
       function choose() {
           $resource = 'posts';
           $action = 'choose';
-          require('views/layout/application.php');
+          require('views/layout/CustomApplication.php');
       }
 
       function spot($id) {
