@@ -1,22 +1,12 @@
-<?php 
-    $adjust_string = '';
-
-    if (($action == 'profilechg') || ($action == 'gourmet') || ($action == 'spot') || ($action == 'edit') || ($action == 'delete')){
-      $adjust_string = '../';
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="utf-8">
   <title>B-MAP</title>
   <!-- CSS -->
-  <link rel="stylesheet" href="../webroot/assets/css/bootstrap.css">
-  <link rel="stylesheet" href="../webroot/assets/js/bootstrap.js">
-  <link rel="stylesheet" href="../webroot/assets/css/base.css">
-  <!-- fabcon set -->
-  <link rel="icon" type="image/png" href="../webroot/assets/images/favi.png" sizes="32x32">
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/js/bootstrap.js">
+  <link rel="stylesheet" href="assets/css/base.css">
 </head>
 
 <body>
@@ -46,12 +36,43 @@
     </nav>
 
     <div id="contents"><!-- コンテンツはこのタグ内に記入 -->
-      <div class="container" style="margin-top:50px">
-          <!-- ここに各アクション名に沿ったphpファイルを出力する -->
-           <?php
-              include('views/'.$resource.'/'. $action .'.php');
-          ?>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+          <form class="form-horizontal">
+            <!-- メールアドレス -->
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Email</label>
+              <div class="col-sm-8">
+                <input type="email" class="form-control login-form" placeholder="xxxxx@xxx.com" />
+              </div>
+            </div>
+            <!-- パスワード -->
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Password</label>
+              <div class="col-sm-8">
+                <input type="password" class="form-control login-form" placeholder="xxxxxx" />
+              </div>
+            </div>
+            <!-- ログインボタン -->
+            <div class="form-group">
+              <div class="col-sm-4"></div>
+              <div class="col-sm-8">
+                <button type="submit" class="btn form-btn">Login</button>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
+    </div>
+
     </div>
 
     <!-- フッター -->
@@ -60,10 +81,11 @@
         <footer id="footer">copyright © B-MAP All Rights Reserved.</footer>
       </div>
     </nav>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../webroot/assets/js/bootstrap.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="../<?php echo $adjust_string; ?>../webroot/assets/js/bootstrap.min.js"></script>
-  </body>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="assets/js/bootstrap.js"></script>
+
+</body>
 </html>
