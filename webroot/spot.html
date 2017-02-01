@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>B-MAP</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/js/bootstrap.js">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="icon" type="image/png" href="assets/images/newFavi2.png" sizes="32x32">
+</head>
+
+<body>
+  <!-- <div id="wrap"> -->
+    <!-- ヘッダー -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href=""><span class="strong-title">B-MAP</span></a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="" class="new"><spn class="glyphicon glyphicon-edit"></spn></a></li>
+            <li><a href="" class="user"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
+            <li><a href="" class="logn"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- カルーセル -->
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+
+    <div id="contents"><!-- コンテンツはこのタグ内に記入 -->
+
+    <!-- title -->
+      <div class="form-group">
+        <div class="col-md-12">
+        <h3>景色最高</h3>
+        </div>
+      </div>
+       <br>
+       <br>
+      <div class="container">
+            <div id="main_area">
+                    <!-- Slider -->
+                    <div class="row">
+                        <div class="col-xs-12" id="slider">
+                            <!-- Top part of the slider -->
+                            <div class="row">
+                             <div class="col-sm-2" id="carousel-text"></div>
+                                <div class="col-sm-8" id="carousel-bounding-box">
+                                    <div class="carousel slide" id="myCarousel">
+                                        <!-- Carousel items -->
+                                        <div class="carousel-inner">
+                                            <div class="active item" data-slide-number="0">
+                                            <img src="http://placehold.it/770x300&text=one"></div>
+
+                                            <div class="item" data-slide-number="1">
+                                            <img src="http://placehold.it/770x300&text=two"></div>
+
+                                            <div class="item" data-slide-number="2">
+                                            <img src="http://placehold.it/770x300&text=three"></div>
+
+                                            <div class="item" data-slide-number="3">
+                                            <img src="http://placehold.it/770x300&text=four"></div>
+
+                                            <div class="item" data-slide-number="4">
+                                            <img src="http://placehold.it/770x300&text=five"></div>
+
+                                            <div class="item" data-slide-number="5">
+                                            <img src="http://placehold.it/770x300&text=six"></div>
+                                            <div class="item" data-slide-number="6">
+                                            
+                                        </div><!-- Carousel nav -->
+                                          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                            <span class="glyphicon glyphicon-chevron-left"></span>
+                                          </a>
+                                          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                            <span class="glyphicon glyphicon-chevron-right"></span>
+                                          </a>
+                                    </div>
+                                    <br>
+                                    <br>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <!-- Textarea -->
+                                  <div class="form-group">
+                                   <!-- <label class="col-md-4 control-label"></label> -->
+                                      <div class="col-md-offset-3">
+                                       <h4>ローカルの人しか知らない場所です</h4>
+                                       <br>
+                                       <br>
+                                      </div>
+                                  </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div><!--/Slider-->
+
+                    <div class="row hidden-xs" id="slider-thumbs">
+                            <!-- Bottom switcher of slider -->
+                            <ul class="hide-bullets">
+                                <ul class="col-sm-2">
+                                    <a class="thumbnail" id="carousel-selector-0"><img src="http://placehold.it/170x100&text=one"></a>
+                                </ul>
+
+                                <ul class="col-sm-2">
+                                    <a class="thumbnail" id="carousel-selector-1"><img src="http://placehold.it/170x100&text=two"></a>
+                                </ul>
+
+                                <ul class="col-sm-2">
+                                    <a class="thumbnail" id="carousel-selector-2"><img src="http://placehold.it/170x100&text=three"></a>
+                                </ul>
+
+                                <ul class="col-sm-2">
+                                    <a class="thumbnail" id="carousel-selector-3"><img src="http://placehold.it/170x100&text=four"></a>
+                                </ul>
+
+                                <ul class="col-sm-2">
+                                    <a class="thumbnail" id="carousel-selector-4"><img src="http://placehold.it/170x100&text=five"></a>
+                                </ul>
+
+                                <ul class="col-sm-2">
+                                    <a class="thumbnail" id="carousel-selector-5"><img src="http://placehold.it/170x100&text=six"></a>
+                                </ul>
+                            </ul>
+                    </div>
+            </div>
+      </div>
+
+      <script type="text/javascript">
+        jQuery(document).ready(function($) {
+
+            $('#myCarousel').carousel({
+                    interval: 5000
+            });
+
+            $('#carousel-text').html($('#slide-content-0').html());
+
+            //Handles the carousel thumbnails
+           $('[id^=carousel-selector-]').click( function(){
+                var id = this.id.substr(this.id.lastIndexOf("-") + 1);
+                var id = parseInt(id);
+                $('#myCarousel').carousel(id);
+            });
+
+            // When the carousel slides, auto update the text
+            $('#myCarousel').on('slid.bs.carousel', function (e) {
+                     var id = $('.item.active').data('slide-number');
+                    $('#carousel-text').html($('#slide-content-'+id).html());
+            });
+      });
+      </script>
+
+    <!-- フッター -->
+    <nav class="navbar navbar-inverse navbar-fixed-bottom">
+      <div class="container">
+        <footer id="footer">copyright © B-MAP All Rights Reserved.</footer>
+      </div>
+    </nav>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="assets/js/bootstrap.js"></script>
+  <script src="assets/js/form.js"></script>
+
+</body>
+</html>

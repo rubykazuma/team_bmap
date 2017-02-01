@@ -1,0 +1,356 @@
+/* ヘッダー、フッター */
+
+body{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.navbar-fixed-top{
+    background-color: #a2d7d4;
+}
+
+.navbar-fixed-bottom{
+    text-align: center;
+    background-color: #a2d7d4;
+    border-top: 1px solid #e7e7e7;
+    padding-top: 15px;
+}
+
+.glyphicon{
+    font-size: 18px;
+}
+
+/* 投稿詳細ページ */
+
+h3{
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h4{
+  width: 100%;
+  margin: 0 auto;
+
+}
+
+/* 新規投稿ページ */
+
+#contents{
+    min-height: 250px;
+}
+
+#area, #genre{
+    width: 150px;
+}
+
+/* 投稿編集･削除ページ */
+
+.input-file{
+    margin-bottom: 15px;
+}
+
+img{
+    margin-bottom: 4px;
+}
+
+/* ユーザー登録、ログイン、情報変更、削除 */
+
+.edit-form{
+    width: 300px;
+}
+
+.login-form{
+    width: 300px;
+}
+
+.register-form{
+    width: 300px;
+}
+
+.form-btn{
+    background-color: #a2d7d4;
+    color: black;
+    border: #a2d7d4;
+}
+
+/* ユーザー個別ページ */
+
+.userName{
+    text-align: center;
+    margin-top: auto;
+}
+
+.editProfile{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.thumbnail{
+    margin-bottom: 10px;
+    border: 0px;
+}
+
+/* index choose用css*/
+
+.carousel {
+  margin-bottom: 0;
+  padding: 0 40px 30px 40px;
+}
+/* Reposition the controls slightly */
+.carousel-control {
+  left: -12px;
+}
+.carousel-control.right {
+  right: -12px;
+}
+/* Changes the position of the indicators */
+.carousel-indicators {
+  right: 50%;
+  top: auto;
+  bottom: 0px;
+  margin-right: -19px;
+}
+/* Changes the colour of the indicators */
+.carousel-indicators li {
+  background: #c0c0c0;
+}
+.carousel-indicators .active {
+  background: #333333;
+}
+
+/* world map*/
+/* 共通部分 */
+#imagemap {
+    margin: 0px auto;
+    padding: 0px;
+    background: transparent url(../../assets/images/world.png) top left no-repeat;
+    width: 700px;
+    height: 500px;
+    position: relative;
+}
+#imagemap li {
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    list-style: none;
+    font-size: 14px;
+}
+#imagemap a {
+    position: absolute;
+}
+#imagemap a span {
+    display: none;
+}
+
+/* north_america */
+/* 選択範囲 */
+#north_amerika {
+    top: 75px;
+    left: 405px;
+}
+/* 画像位置 */
+#north_amerika a {
+    width: 300px;
+    height: 220px;
+}
+#north_amerika a:hover {
+    background: url(../../assets/images/world.png) -183px -641px no-repeat;
+}
+
+/* asia */
+/* 選択範囲 */
+#asia {
+    top: 200px;
+    left: 100px;
+}
+/* 画像位置 */
+#asia a {
+    width: 340px;
+    height: 150px;
+}
+#asia a:hover {
+    background: url(../../assets/images/world.png) -183px -1155px no-repeat;
+}
+
+/* oceania */
+/* 選択範囲 */
+#oceania {
+    top:  350px;
+    left: 250px;
+}
+/* 画像位置 */
+#oceania a {
+    width:  147px;
+    height: 93px;
+}
+#oceania a:hover {
+    background: url(../../assets/images/world.png) -108px -1747px no-repeat;
+}
+
+/* south_america */
+/* 選択範囲 */
+#south_america {
+    top:  300px;
+    left: 550px;
+}
+/* 画像位置 */
+#south_america a {
+    width:  110px;
+    height: 150px;
+}
+#south_america a:hover {
+    background: url(../../assets/images/world.png) -267px -2190px no-repeat;
+}
+
+/* africa */
+/* 選択範囲 */
+#africa {
+    top:  244px;
+    left: 15px;
+}
+/* 画像位置 */
+#africa a {
+    width:  160px;
+    height: 160px;
+}
+#africa a:hover {
+    background: url(../../assets/images/world.png) -254px -3182px no-repeat;
+}
+
+/* eurasia */
+/* 選択範囲 */
+#eurasia {
+    top:  100px;
+    left: 30px;
+}
+/* 画像位置 */
+#eurasia a {
+    width:  370px;
+    height: 150px;
+}
+#eurasia a:hover {
+    background: url(../../assets/images/world.png) -143px -2679px no-repeat;
+}
+
+
+
+
+
+
+
+
+/*{
+    margin: 0;
+    padding: 0;
+}
+#wrapper {
+    position: relative;
+    width: 800px;
+    margin: 0 auto;
+}*/
+/*h1 {
+    font-size: 30px;
+    color: #777;
+    padding: 10px;
+}
+h2 {
+    font-size: 24px;
+    color: #999;
+    padding: 20px;
+}*/
+/*#slider_wrap {
+    margin: 20px auto;
+    width: 680px;
+    height: 125px;
+    padding: 20px 20px 40px 20px;
+    background: #EFEFEF;
+    position: relative;
+    border: 1px solid #CCC;
+}
+#slider_prev {
+    position: absolute;
+    top: 65px;
+    left: 10px;
+    cursor: pointer;
+}
+#slider_next {
+    position: absolute;
+    top: 65px;
+    right: 10px;
+    cursor: pointer;
+}
+#slider {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+#slider_inner ul.panel {
+    width: 640px;
+    height: 85px;
+    padding: 20px;
+    list-style-type: none;
+    float: left;
+    background: #999;
+}
+#slider_inner ul.panel li {
+    float: left;
+    margin: 0 5px;
+    display: inline;
+}
+#slider_inner ul.panel img {
+    border: none;
+}
+
+#icon {
+    padding-top: 10px;
+    width: 30px;
+    margin: 0 auto;
+}
+
+#icon a {
+    padding: 8px;
+}
+
+#main_photo {
+    position: relative;
+    margin: 0 auto;
+    width: 680px;
+    height: 383px;
+    border: 3px solid #CCC;
+    overflow: hidden;
+}
+
+#main_photo img {
+    position: absolute;
+}*/
+
+
+
+/*.carousel {
+    margin-bottom: 0;
+    padding: 0 40px 30px 40px;
+}
+/* Reposition the controls slightly */
+/*.carousel-control {
+    left: -12px;
+}
+.carousel-control.right {
+    right: -12px;
+}
+/* Changes the position of the indicators */
+/*.carousel-indicators {
+    right: 50%;
+    top: auto;
+    bottom: 0px;
+    margin-right: -19px;
+}
+ Changes the colour of the indicators 
+.carousel-indicators li {
+    background: #c0c0c0;
+}
+.carousel-indicators .active {
+background: #333333;
+}*//*/
+

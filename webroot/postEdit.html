@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>B-MAP</title>
+	<!-- CSS -->
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/js/bootstrap.js">
+  <link rel="stylesheet" href="assets/css/base.css">
+</head>
+
+<body>
+	<!-- <div id="wrap"> -->
+		<!-- ヘッダー -->
+		<nav class="navbar navbar-default navbar-fixed-top">
+		  <div class="container">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header page-scroll">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		          <span class="sr-only">Toggle navigation</span>
+		          <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href=""><span class="strong-title">B-MAP</span></a>
+		    </div>
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav navbar-right">
+			      <li><a href="" class="new"><spn class="glyphicon glyphicon-edit"></spn></a></li>
+			      <li><a href="" class="user"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
+			      <li><a href="" class="logn"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span></a></li>
+		      </ul>
+		    </div>
+		  </div>
+		</nav>
+
+	  <div id="contents"><!-- コンテンツはこのタグ内に記入 -->
+
+	  <br>
+	  <br>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-2"></div>
+				<div class="col-sm-8">
+	  			<form class="form-horizontal">
+
+						<!-- タイトル -->
+						<div class="form-group">
+						  <label class="col-sm-3 control-label">Title</label>
+						  <div class="col-sm-7">
+						  <input id="title" name="title" type="text" class="form-control input-md" value="イギリスの珍グルメ･うなぎゼリーを食べてみた。" maxlength="20" required>
+						  </div>
+						</div>
+
+						<!-- エリア -->
+						<div class="form-group">
+						  <label class="col-sm-3 control-label">Area</label>
+						  <div class="col-sm-7">
+						    <select id="edit-area" name="area" class="form-control">
+						      <option value="0">Asia</option>
+						      <option selected value="1">Europe</option>
+						      <option value="2">North America</option>
+						      <option value="3">South America</option>
+						      <option value="4">Africa</option>
+						      <option value="5">Oceania</option>
+						    </select>
+						  </div>
+						</div>
+
+						<!-- ジャンル -->
+						<div class="form-group">
+						  <label class="col-sm-3 control-label">Genre</label>
+						  <div class="col-sm-7">
+						    <select id="edit-genre" name="genre" class="form-control">
+						      <option value="0">Spot</option>
+						      <option selected value="1">Gourmet</option>
+						    </select>
+						  </div>
+						</div>
+
+						<!-- コンテンツ -->
+						<div class="form-group">
+						  <label class="col-sm-3 control-label" for="contents">Contents</label>
+						  <div class="col-sm-7">
+						    <textarea class="form-control" id="contents" name="contents">
+とにかくしょっぱい！
+食感はうなぎそのまま。
+味は塩辛をしょっぱくした感じ。
+						    </textarea>
+						  </div>
+						</div>
+
+						<!-- メイン画像 -->
+						<div class="form-group">
+						  <label class="col-sm-3 control-label">Main Image</label>
+						  <div class="col-sm-7">
+						  	<div>
+							  	<label class="select-image" for="file_photo">
+										Change
+										<input type="file" id="file_photo" class="main-image" style="display:none;" required>
+									</label>
+								</div>
+						    <a href="" class="main-image"><img src="http://lorempixel.com/150/150/" alt=""></a>
+						  </div>
+						</div>
+
+						<!-- サブ画像 -->
+						<div class="form-group">
+						  <label class="col-sm-3 control-label">Sub Image</label>
+						  <div class="col-sm-7">
+							  <div>
+								  <label class="select-image add-image" for="file_photo">
+										Add Image
+										<input type="file" id="file_photo" class="add-image" style="display:none;" required>
+									</label>
+								</div>
+						  	<div class="sub-image">
+						  		<div>
+								  	<label class="select-image" for="file_photo">
+											Change
+											<input type="file" id="file_photo" style="display:none;">
+										</label>
+										<label class="delete-image">
+											Delete
+											<input type="" style="display:none;">
+										</label>
+									</div>
+							    <a href="" class="main-image"><img src="http://lorempixel.com/150/150/" alt=""></a>
+							  </div>
+							  <div  class="sub-image">
+						  		<div>
+								  	<label class="select-image" for="file_photo">
+											Change
+											<input type="file" id="file_photo" style="display:none;">
+										</label>
+										<label class="delete-image">
+											Delete
+											<input type="" style="display:none;">
+										</label>
+									</div>
+							    <a href="" class="main-image"><img src="http://lorempixel.com/150/150/" alt=""></a>
+							  </div>
+						  	<div class="sub-image">
+						  		<div>
+								  	<label class="select-image" for="file_photo">
+											Change
+											<input type="file" id="file_photo" style="display:none;">
+										</label>
+										<label class="delete-image">
+											Delete
+											<input type="" style="display:none;">
+										</label>
+									</div>
+							    <a href="" class="main-image"><img src="http://lorempixel.com/150/150/" alt=""></a>
+							  </div>
+						  	<div class="sub-image">
+						  		<div>
+								  	<label class="select-image" for="file_photo">
+											Change
+											<input type="file" id="file_photo" style="display:none;">
+										</label>
+										<label class="delete-image">
+											Delete
+											<input type="" style="display:none;">
+										</label>
+									</div>
+							    <a href="" class="main-image"><img src="http://lorempixel.com/150/150/" alt=""></a>
+							  </div>
+						  </div>
+						</div>
+
+						<!-- 編集･削除ボタン -->
+						<div class="form-group">
+						  <label class="col-sm-3 control-label"></label>
+						  <div class="col-sm-7">
+						    <button id="create" name="edit" class="btn form-btn">Edit</button>
+						    <button id="create" name="delete" class="btn form-btn">Delete</button>
+						  </div>
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+
+	  </div>
+
+	  <!-- フッター -->
+		<nav class="navbar navbar-inverse navbar-fixed-bottom">
+		  <div class="container">
+		  	<footer id="footer">copyright © B-MAP All Rights Reserved.</footer>
+		  </div>
+		</nav>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="assets/js/bootstrap.js"></script>
+
+</body>
+</html>
