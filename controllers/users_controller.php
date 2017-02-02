@@ -23,9 +23,12 @@
       case 'profilechg':
         $controller->profilechg($id);
         break;
+      case 'profileud':
+        $controller->profileud($id,$_POST);
+        break;
       case 'update':
         $controller->update($_POST,$id);
-        break;  
+        break;
       default:
         # code...
         break;
@@ -53,15 +56,27 @@
       }
 
       function profilechg($id){
-          $resource = 'users';
-          $action = 'profilechg';
-          require('views/layout/application.php');
+        // モデルを呼び出す
+        $user = new User();
+        // モデルのprofilechgメソッドを実行する
+        $viewOptinons = $user->profilechg($id);
+        $resource = 'users';
+        $action = 'profilechg';
+        require('views/layout/application.php');
       }
 
-      function update($id,$post_data){
-
+      function profileud($id,$user_data){
+        $user = new User();
+        $return = $user->profileud($id,$user_data);
+        header('Location: /b_map/posts/home');
       }
 
+      function delete($id){
+        $user = new User();
+        $viewOptinons = $user->profilechg($id);
+        $return = $blog->delete($id);
+        header('Location: /b_map/posts/home');
+      }
 
    }
 ?>

@@ -1,4 +1,4 @@
-<?php 
+<?php
     $adjust_string = '';
 
     if (($action == 'profilechg') || ($action == 'gourmet') || ($action == 'spot') || ($action == 'edit') || ($action == 'delete')){
@@ -12,11 +12,11 @@
   <meta charset="utf-8">
   <title>B-MAP</title>
   <!-- CSS -->
-  <link rel="stylesheet" href="../webroot/assets/css/bootstrap.css">
-  <link rel="stylesheet" href="../webroot/assets/js/bootstrap.js">
-  <link rel="stylesheet" href="../webroot/assets/css/base.css">
+  <link rel="stylesheet" href="../<?php echo $adjust_string; ?>webroot/assets/css/bootstrap.css">
+  <link rel="stylesheet" href="../<?php echo $adjust_string; ?>webroot/assets/js/bootstrap.js">
+  <link rel="stylesheet" href="../<?php echo $adjust_string; ?>webroot/assets/css/base.css">
   <!-- fabcon set -->
-  <link rel="icon" type="image/png" href="../webroot/assets/images/favi.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../<?php echo $adjust_string; ?>webroot/assets/images/favi.png" sizes="32x32">
 </head>
 
 <body>
