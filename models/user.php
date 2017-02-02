@@ -29,5 +29,13 @@
 			return $results;
 			}
 
+			function userdel($id){
+				$sql = sprintf("DELETE FROM `user` WHERE `userid` = %d", $id);
+				// SQLの実行
+				$results = mysqli_query($this->dbconnect, $sql) or die(mysqli_error($this->dbconnect));
+				// 実行結果を返す
+				return $results;
+			}
+
 	}
 ?>

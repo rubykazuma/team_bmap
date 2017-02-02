@@ -29,7 +29,7 @@
           <div class="col-sm-4"></div>
           <div class="col-sm-8">
             <button type="submit" class="btn form-btn">Edit</button>
-            <a href="" class="btn form-btn">Delete</a>
+            <a href="/b_map/users/userdel/<?php echo $viewOptinons['userid']; ?>" class="btn form-btn">Delete</a>
           </div>
         </div>
       </form>

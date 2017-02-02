@@ -26,6 +26,9 @@
       case 'profileud':
         $controller->profileud($id,$_POST);
         break;
+      case 'userdel':
+        $controller->userdel($id);
+        break;
       case 'update':
         $controller->update($_POST,$id);
         break;
@@ -71,10 +74,9 @@
         header('Location: /b_map/posts/home');
       }
 
-      function delete($id){
+      function userdel($id){
         $user = new User();
-        $viewOptinons = $user->profilechg($id);
-        $return = $blog->delete($id);
+        $return = $user->userdel($id);
         header('Location: /b_map/posts/home');
       }
 
