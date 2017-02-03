@@ -94,7 +94,7 @@
 
       function mypage($id){
           $post = new Post();
-          $post_data = $post->mypage($id);
+          $posts_data = $post->mypage($id);
           $resource = 'posts';
           $action = 'mypage';
           require('views/layout/application.php');

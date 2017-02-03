@@ -26,46 +26,22 @@
 									　<br>
 									<div class="tab-content">
 										<div class="tab-pane active" id="spot">
-											<div class="col-sm-4">
-												<a href="" class="thumbnail"><img src="../../webroot/assets/images/<?php echo $post_data['mainPictureAddress'] ?>" /></a>
-											</div>
-											<div class="col-sm-4">
-												<a href="" class="thumbnail"><img alt="Bootstrap Image Preview" src="http://lorempixel.com/150/150/" /></a>
-											</div>
-											<div class="col-sm-4">
-												<a href="" class="thumbnail"><img alt="Bootstrap Image Preview" src="http://lorempixel.com/150/150/" /></a>
-											</div>
-										　<br>
-											<div class="col-sm-4">
-												<a href="" class="thumbnail"><img alt="Bootstrap Image Preview" src="http://lorempixel.com/150/150/" /></a>
-											</div>
-											<div class="col-sm-4">
-												<a href="" class="thumbnail"><img alt="Bootstrap Image Preview" src="http://lorempixel.com/150/150/" /></a>
-											</div>
-											<div class="col-sm-4">
-												<a href="" class="thumbnail"><img alt="Bootstrap Image Preview" src="http://lorempixel.com/150/150/" /></a>
-											</div>
+											<?php foreach ($posts_data as $post_data) { ?>
+												<?php if ($post_data['genre'] == '0') { ?>
+													<div class="col-sm-4">
+														<a href="" class="thumbnail"><img src="../../webroot/pictures/<?php echo $post_data['mainPictureAddress'] ?>" /></a>
+													</div>
+												<?php } ?>
+											<?php } ?>
 										</div>
 										<div class="tab-pane" id="gourmet">
-											<div class="col-sm-4">
-												<a href="" class="thumbnail"><img alt="Bootstrap Image Preview" src="http://lorempixel.com/150/150/" /></a>
-											</div>
-											<div class="col-sm-4">
-												<a href="" class="thumbnail"><img alt="Bootstrap Image Preview" src="http://lorempixel.com/150/150/" /></a>
-											</div>
-											<div class="col-sm-4">
-												<a href="" class="thumbnail"><img alt="Bootstrap Image Preview" src="http://lorempixel.com/150/150/" /></a>
-											</div>
-										　<br>
-											<div class="col-sm-4">
-												<a href="" class="thumbnail"><img alt="Bootstrap Image Preview" src="http://lorempixel.com/150/150/" /></a>
-											</div>
-											<div class="col-sm-4">
-												<a href="" class="thumbnail"><img alt="Bootstrap Image Preview" src="http://lorempixel.com/150/150/" /></a>
-											</div>
-											<div class="col-sm-4">
-												<a href="" class="thumbnail"><img alt="Bootstrap Image Preview" src="http://lorempixel.com/150/150/" /></a>
-											</div>
+											<?php foreach ($posts_data as $post_data) { ?>
+												<?php if ($post_data['genre'] == '1') { ?>
+													<div class="col-sm-4">
+														<a href="" class="thumbnail"><img src="../../webroot/pictures/<?php echo $post_data['mainPictureAddress'] ?>" /></a>
+													</div>
+												<?php } ?>
+											<?php } ?>
 										</div>
 									</div>
 								</div>

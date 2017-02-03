@@ -16,8 +16,11 @@
 		function mypage($id){
 			$sql = sprintf('SELECT * FROM `posts` WHERE `userid` = %d', $id);
 			$results = mysqli_query($this->dbconnect, $sql) or die(mysqli_error($this->dbconnect));
-			$result = mysqli_fetch_assoc($results);
-			return $result;
+			$rtn = array();
+			while ($result = mysqli_fetch_assoc($results)) {
+				$rtn[] = $result;
+			}
+			return $rtn;
 		}
 	}
 
