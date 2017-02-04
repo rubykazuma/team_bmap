@@ -44,8 +44,14 @@
           require('views/layout/application.php');
       }
 
-      function create($post_data){
-
+      function create($user_data){
+          $user = new User($user_data);
+          $return = $user->create($user_data);
+          if($result == 'error'){
+            header('Location: /b_map/users/register');
+          } else {
+            header('Location: /b_map/posts/home');
+          }
       }
 
       function login() {
