@@ -19,7 +19,7 @@
       $record = mysqli_query($this->dbconnect, $sql) or die(mysqli_error($this->dbconnect));
       $table = mysqli_fetch_assoc($record);
 
-      // 重複チェックをクリアした場合にのみ登録
+      // 重複チェックをクリアした場合にのみDBに登録
       if ($table['cnt'] == 0) {
 				$sql = sprintf("INSERT INTO `user` (`nickname`, `email`, `birthday`, `password`, `createdate`)
 												VALUES ('%s', '%s', '20170101', '%s', NOW());", $user_data['nickname'], $user_data['email'], sha1($user_data['password']));

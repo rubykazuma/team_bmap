@@ -47,6 +47,7 @@
       function create($user_data){
           $user = new User($user_data);
           $return = $user->create($user_data);
+          // 重複していた場合は登録画面へ、登録完了時は、トップページへ遷移(未完成)
           if($result == 'error'){
             header('Location: /b_map/users/register');
           } else {
@@ -65,9 +66,7 @@
       }
 
       function profilechg($id){
-        // モデルを呼び出す
         $user = new User();
-        // モデルのprofilechgメソッドを実行する
         $viewOptinons = $user->profilechg($id);
         $resource = 'users';
         $action = 'profilechg';
