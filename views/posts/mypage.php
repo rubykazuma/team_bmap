@@ -7,8 +7,8 @@
 							<div class="row">
 								<div class="col-sm-3">
 									<h3 class="userName">
-										Ryohei Jin
-										<!-- <?php echo $user_data['nickname']; ?> -->
+										User Name
+										<!-- <?php echo $_SESSION['nickname']; ?> -->
 									</h3>
 									<div class="editProfile">
 										<a href="/b_map/users/profilechg/<?php echo $id; ?>" class="btn btn-default">Edit Profile</a>
@@ -29,7 +29,7 @@
 											<?php foreach ($posts_data as $post_data) { ?>
 												<?php if ($post_data['genre'] == '0') { ?>
 													<div class="col-sm-4">
-														<a href="" class="thumbnail"><img src="../../webroot/pictures/<?php echo $post_data['mainPictureAddress'] ?>" /></a>
+														<a href="/b_map/posts/edit/<?php echo $post_data['id'] ?>" class="thumbnail"><img src="../../webroot/pictures/<?php echo $post_data['mainPictureAddress'] ?>" /></a>
 													</div>
 												<?php } ?>
 											<?php } ?>
@@ -38,7 +38,7 @@
 											<?php foreach ($posts_data as $post_data) { ?>
 												<?php if ($post_data['genre'] == '1') { ?>
 													<div class="col-sm-4">
-														<a href="" class="thumbnail"><img src="../../webroot/pictures/<?php echo $post_data['mainPictureAddress'] ?>" /></a>
+														<a href="/b_map/posts/edit/<?php echo $post_data['id'] ?>" class="thumbnail"><img src="../../webroot/pictures/<?php echo $post_data['mainPictureAddress'] ?>" /></a>
 													</div>
 												<?php } ?>
 											<?php } ?>
