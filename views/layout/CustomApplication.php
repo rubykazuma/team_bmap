@@ -1,4 +1,4 @@
-<?php 
+<?php
     $adjust_string = '';
 
     if (($action == 'profilechg') || ($action == 'gourmet') || ($action == 'spot') || ($action == 'edit') || ($action == 'delete')){
@@ -41,8 +41,8 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="" class="new"><spn class="glyphicon glyphicon-edit"></spn></a></li>
-            <li><a href="" class="user"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
-            <li><a href="" class="logn"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span></a></li>
+            <li><a href="/b_map/posts/mypage/<?php echo $id; ?>" class="user"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
+            <li><a href="/b_map/users/logout/<?php echo $id; ?>" class="logn"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span></a></li>
           </ul>
         </div>
       </div>

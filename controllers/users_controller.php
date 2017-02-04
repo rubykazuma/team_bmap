@@ -18,7 +18,7 @@
         $controller->login();
         break;
       case 'logout':
-        $controller->logout();
+        $controller->logout($id);
         break;
       case 'profilechg':
         $controller->profilechg($id);
@@ -54,8 +54,10 @@
           require('views/layout/application.php');
       }
 
-      function logout(){
-
+      function logout($id){
+        $user = new User();
+        $return = $user->logout($id);
+        header('Location: /b_map/posts/home');
       }
 
       function profilechg($id){

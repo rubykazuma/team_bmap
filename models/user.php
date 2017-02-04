@@ -13,6 +13,10 @@
 		$this->dbconnect = $db;
 		}
 
+		function logput($id){
+
+		}
+
 		function profilechg($id){
 			$sql = sprintf('SELECT * FROM `user` WHERE `userid` = %d', $id);
 			$results = mysqli_query($this->dbconnect, $sql) or die(mysqli_error($this->dbconnect));
@@ -27,15 +31,15 @@
 			$results = mysqli_query($this->dbconnect, $sql) or die(mysqli_error($this->dbconnect));
 			// 実行結果を返す
 			return $results;
-			}
+		}
 
-			function userdel($id){
-				$sql = sprintf("DELETE FROM `user` WHERE `userid` = %d", $id);
-				// SQLの実行
-				$results = mysqli_query($this->dbconnect, $sql) or die(mysqli_error($this->dbconnect));
-				// 実行結果を返す
-				return $results;
-			}
+		function userdel($id){
+			$sql = sprintf("DELETE FROM `user` WHERE `userid` = %d", $id);
+			// SQLの実行
+			$results = mysqli_query($this->dbconnect, $sql) or die(mysqli_error($this->dbconnect));
+			// 実行結果を返す
+			return $results;
+		}
 
 	}
 ?>
