@@ -29,7 +29,7 @@
 											<?php foreach ($posts_data as $post_data) { ?>
 												<?php if ($post_data['genre'] == '0') { ?>
 													<div class="col-sm-4">
-														<a href="/b_map/posts/edit/<?php echo $post_data['id'] ?>" class="thumbnail"><img src="../../webroot/pictures/<?php echo $post_data['mainPictureAddress'] ?>" /></a>
+														<a href="/b_map/posts/edit/<?php echo $post_data['id'] ?>" title="<?php echo $post_data['title'] ?>" class="thumbnail"><img src="../../webroot/pictures/<?php echo $post_data['mainPictureAddress'] ?>" /></a>
 													</div>
 												<?php } ?>
 											<?php } ?>
@@ -38,7 +38,7 @@
 											<?php foreach ($posts_data as $post_data) { ?>
 												<?php if ($post_data['genre'] == '1') { ?>
 													<div class="col-sm-4">
-														<a href="/b_map/posts/edit/<?php echo $post_data['id'] ?>" class="thumbnail"><img src="../../webroot/pictures/<?php echo $post_data['mainPictureAddress'] ?>" /></a>
+														<a href="/b_map/posts/edit/<?php echo $post_data['id'] ?>" title="<?php echo $post_data['title'] ?>" class="thumbnail"><img src="../../webroot/pictures/<?php echo $post_data['mainPictureAddress'] ?>" /></a>
 													</div>
 												<?php } ?>
 											<?php } ?>
