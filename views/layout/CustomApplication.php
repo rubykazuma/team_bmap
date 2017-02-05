@@ -11,11 +11,11 @@
 <head>
   <meta charset="utf-8">
   <title>B-MAP</title>
-  <link rel="stylesheet" href="assets/css/custombootstrap.css">
-  <link rel="stylesheet" href="assets/js/bootstrap.js">
-  <link rel="stylesheet" href="assets/css/bootstrap-combined.min.css">
+  <link rel="stylesheet" href="../webroot/assets/css/custombootstrap.css">
+  <link rel="stylesheet" href="../webroot/assets/js/bootstrap.js">
+  <link rel="stylesheet" href="../webroot/assets/css/bootstrap-combined.min.css">
   <!-- <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"> -->
-  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="../webroot/assets/css/base.css">
   <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
   <!-- fabcon set -->
