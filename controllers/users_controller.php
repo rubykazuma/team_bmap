@@ -1,5 +1,7 @@
 <?php
 
+  session_start();
+
   //モデルの呼び出し
   require('models/user.php');
 
