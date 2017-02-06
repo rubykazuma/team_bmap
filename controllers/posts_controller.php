@@ -45,8 +45,12 @@
 
 	class PostsController {
       function home() {
+       // モデルを呼び出す
+          $post = new post();
+          $viewOptions = $post->home();
           $resource = 'posts';
           $action = 'home';
+          // var_dump($viewOptions);
           require('views/layout/CustomApplication.php');
       }
 

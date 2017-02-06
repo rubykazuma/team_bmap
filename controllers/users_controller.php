@@ -33,7 +33,7 @@
         $controller->update($_POST,$id);
         break;
       default:
-        # code...
+        # code
         break;
     }
 
