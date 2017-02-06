@@ -27,18 +27,34 @@
             <div class="well">
               <div id="spotCarousel" class="carousel slide">
                 <ol class="carousel-indicators">
-                  <li data-target="#spotCarousel" data-slide-to="0" class="active"></li>
-                  <li data-target="#spotCarousel" data-slide-to="1"></li>
-                  <li data-target="#spotCarousel" data-slide-to="2"></li>
-                </ol>
+                  <!-- 配列の数をカウントして、4で割って小数点第一位を繰り上げ -->
+                  <!-- 繰り上げ数分 繰り返し処理 -->
+                  <?php $cnt = count($viewOptions); ?>
+                  <?php $cnt = ceil($cnt/4); ?>
+                  <?php for ($i=0; $i < $cnt; $i++) :?>
+                    <!-- 1番目のインジケータは● -->
+                    <?php if ($i == 0): ?>
+                      <li data-target="#spotCarousel" data-slide-to="<?php echo $i; ?>" class="active"></li>
+                    <?php else: ?>
+                    <!-- 2番目以降のインジケータは〇 -->
+                      <li data-target="#spotCarousel" data-slide-to="<?php echo $i; ?>" ></li>
+                    <?php endif ?>
+                  <?php endfor ?>
+               </ol>
                 <!-- Carousel items -->
+                <!-- for文の方がすっきりしているが$viewOptionsが
+                     for文内で参照できなかったので、foreachで実装
+                     1カルーセルで4写真表示するため、4除算処理を
+                     実施している。 
+                     データはinitialSetしているので0件処理は
+                     考慮対象外-->
                 <div class="carousel-inner">
                   <?php
                     $i = 0;
                     foreach ($viewOptions as $key): ?>
                       <?php if ($i != 0 && $i % 4 == 0): ?>
-                          </div><!-- item -->
-                        </div><!-- row-fluid -->
+                          </div><!-- row-fluid -->
+                        </div><!-- item -->
                       <?php endif ?>
                       <?PHP if ($i % 4 == 0): ?>
                         <?PHP if ($i == 0): ?>

@@ -26,5 +26,4 @@ class post{
 			return $rtn;
 		}
 }
-
 ?>
