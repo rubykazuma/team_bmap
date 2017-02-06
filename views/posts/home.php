@@ -3,7 +3,7 @@
         <div class="row">
           <div class="visible-lg visible-md">
             <ul id="imagemap">
-              <li id="north_amerika"><a href="/b_map/posts/choose></a></li>
+              <li id="north_amerika"><a href="/b_map/posts/choose"></a></li>
               <li id="south_america"><a href="kanto/tokyo.html"></a></li>
               <li id="eurasia"><a href="kansai/osaka.html"></a></li>
               <li id="asia"><a href="tohoku/miyagi</l"></a></li>
