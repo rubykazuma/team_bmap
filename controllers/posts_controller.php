@@ -35,6 +35,9 @@
       case 'delete':
         $controller->delete($id);
         break;
+      case 'mypage':
+        $controller->mypage($id);
+        break;
    		default:
    			# code...
    			break;
@@ -91,6 +94,14 @@
 
       function delete($id){
 
+      }
+
+      function mypage($id){
+          $post = new Post();
+          $posts_data = $post->mypage($id);
+          $resource = 'posts';
+          $action = 'mypage';
+          require('views/layout/application.php');
       }
    }
 ?>

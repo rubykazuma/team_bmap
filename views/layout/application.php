@@ -1,7 +1,7 @@
-<?php 
+<?php
     $adjust_string = '';
 
-    if (($action == 'profilechg') || ($action == 'gourmet') || ($action == 'spot') || ($action == 'edit') || ($action == 'delete')){
+    if (($action == 'profilechg') || ($action == 'gourmet') || ($action == 'spot') || ($action == 'edit') || ($action == 'delete') || ($action == 'mypage')){
       $adjust_string = '../';
     }
 ?>
@@ -12,11 +12,11 @@
   <meta charset="utf-8">
   <title>B-MAP</title>
   <!-- CSS -->
-  <link rel="stylesheet" href="../webroot/assets/css/bootstrap.css">
-  <link rel="stylesheet" href="../webroot/assets/js/bootstrap.js">
-  <link rel="stylesheet" href="../webroot/assets/css/base.css">
+  <link rel="stylesheet" href="../<?php echo $adjust_string; ?>webroot/assets/css/bootstrap.css">
+  <link rel="stylesheet" href="../<?php echo $adjust_string; ?>webroot/assets/js/bootstrap.js">
+  <link rel="stylesheet" href="../<?php echo $adjust_string; ?>webroot/assets/css/base.css">
   <!-- fabcon set -->
-  <link rel="icon" type="image/png" href="../webroot/assets/images/favi.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../<?php echo $adjust_string; ?>webroot/assets/images/favi.png" sizes="32x32">
 </head>
 
 <body>
@@ -62,8 +62,8 @@
     </nav>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../webroot/assets/js/bootstrap.js"></script>
+    <script src="../<?php echo $adjust_string; ?>webroot/assets/js/bootstrap.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="../<?php echo $adjust_string; ?>../webroot/assets/js/bootstrap.min.js"></script>
+    <script src="../<?php echo $adjust_string; ?>/webroot/assets/js/bootstrap.min.js"></script>
   </body>
 </html>
