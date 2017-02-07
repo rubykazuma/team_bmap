@@ -35,9 +35,6 @@
       case 'delete':
         $controller->delete($id);
         break;
-      case 'mypage':
-        $controller->mypage($id);
-        break;
    		default:
    			# code...
    			break;
@@ -45,19 +42,21 @@
 
 	class PostsController {
       function home() {
-       // モデルを呼び出す
-          $post = new post();
-          $viewOptions = $post->home();
           $resource = 'posts';
           $action = 'home';
-          // var_dump($viewOptions);
-          require('views/layout/CustomApplication.php');
+          require('views/layout/application.php');
       }
+      // ↑ここで使えるようにもう一度記入  URLで指示されたファイルを呼び出す処理をしている
 
       function choose() {
+          $post = new Post();
+          $viewOptions = $post->choose();
+
+          // var_dump($viewOptions);
+
           $resource = 'posts';
           $action = 'choose';
-          require('views/layout/CustomApplication.php');
+          require('views/layout/application.php');
       }
 
       function spot($id) {
@@ -94,14 +93,6 @@
 
       function delete($id){
 
-      }
-
-      function mypage($id){
-          $post = new Post();
-          $posts_data = $post->mypage($id);
-          $resource = 'posts';
-          $action = 'mypage';
-          require('views/layout/application.php');
       }
    }
 ?>
