@@ -78,8 +78,10 @@
           require('views/layout/application.php');
       }
 
-      function create($post_data){
-
+      function create($add_data){
+        $post = new Post();
+        $return = $post->create($add_data);
+        header('Location: /b_map/posts/home');
       }
 
       function edit($id){
