@@ -42,9 +42,13 @@
 
 	class PostsController {
       function home() {
+       // モデルを呼び出す
+          $post = new post();
+          $viewOptions = $post->home();
           $resource = 'posts';
           $action = 'home';
-          require('views/layout/application.php');
+          // var_dump($viewOptions);
+          require('views/layout/CustomApplication.php');
       }
       // ↑ここで使えるようにもう一度記入  URLで指示されたファイルを呼び出す処理をしている
 
@@ -56,7 +60,7 @@
 
           $resource = 'posts';
           $action = 'choose';
-          require('views/layout/application.php');
+          require('views/layout/CustomApplication.php');
       }
 
       function spot($id) {
