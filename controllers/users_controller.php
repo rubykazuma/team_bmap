@@ -49,11 +49,26 @@
       }
 
       function login() {
-          $resource = 'users';
-          $action = 'login';
-          require('views/layout/application.php');
-      }
 
+      // 入力チェックのプログラムを書く
+      if (!empty($_POST)) {
+        var_dump("po");
+      // $email = htmlspecialchars($_POST['email']);
+      // ログインの処理
+      if (isset($_POST['email']) && $_POST['password'] != '') {
+        $sql=sprintf('SELECT * FROM members WHERE email = "%s" AND password = "%s"',
+          mysqli_real_escape_string($db, $_POST['email']),
+          mysqli_real_escape_string($db, sha1($_POST['password']))
+          );
+        $record = mysqli_query($db, $sql) or die (mysqli_error($db));   
+
+    } 
+          
+      }
+      $resource = 'users';
+      $action = 'login';
+      require('views/layout/application.php');
+      }
       function logout(){
 
       }
@@ -80,5 +95,6 @@
         header('Location: /b_map/posts/home');
       }
 
-   }
+   
+ }
 ?>
