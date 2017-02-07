@@ -24,7 +24,7 @@
    			$controller->add();
    			break;
       case 'create':
-        $controller->create($_POST);
+        $controller->create($_POST, $_FILES);
         break;
       case 'edit':
         $controller->edit($id);
@@ -78,9 +78,9 @@
           require('views/layout/application.php');
       }
 
-      function create($add_data){
+      function create($add_data,$image_data){
         $post = new Post();
-        $return = $post->create($add_data);
+        $return = $post->create($add_data,$image_data);
         header('Location: /b_map/posts/home');
       }
 

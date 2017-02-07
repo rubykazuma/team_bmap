@@ -38,19 +38,17 @@ class post{
 			return $rtn;
 		}
 
-		function add($add_data){
-			// insert文の記述
-			$sql = sprintf("INSERT INTO `blogs` (`id`, `title`, `body`, `delete_flag`, `created`, `modified`)
-											VALUES (NULL, '%s', '%s', '0', now(), CURRENT_TIMESTAMP);", $blog_data['title'], $blog_data['body']);
+		function create($add_data,$image_data){
+			// 画像UD
+			$image = date('YmdHis') . $image_data['mainImage']['name'];
+      move_uploaded_file($image_data['mainImage']['tmp_name'], '/b_map/webroot/pictures/' . $image);
 
-			$sql = sprintf("INSERT INTO `posts`(`id`, `title`, `contents`, `mainPictureAddress`, `area`, `genre`, `userid`, `createdate`, `modified`)
-											VALUES (NULL, '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s');", $add_data['title'], $add_data['contents'], $add_data['mainImage'], $add_data['area'], $add_data['genre'], $id, now(), now());
-
-			// SQLの実行
-			$results = mysqli_query($this->dbconnect, $sql) or die(mysqli_error($this->dbconnect));
-
-			// 実行結果を返す
-			return $results;
+			// DB登録
+			$sql = sprintf("INSERT INTO `posts`(`title`, `contents`, `mainPictureAddress`, `area`, `genre`, `userid`, `createdate`)
+											VALUES ('%s', '%s', '%s', '%d', '%d', '%d', now());",
+											$add_data['title'], $add_data['contents'], $image, $add_data['area'], $add_data['genre'], $id);
+			$result = mysqli_query($this->dbconnect, $sql) or die(mysqli_error($this->dbconnect));
+			return $result;
 		}
 }
 ?>

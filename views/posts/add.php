@@ -2,7 +2,7 @@
 			<div class="row">
 				<div class="col-sm-2"></div>
 				<div class="col-sm-8">
-	  			<form method="post" action="/b_map/posts/create" class="form-horizontal">
+	  			<form method="post" action="/b_map/posts/create" class="form-horizontal" enctype="multipart/form-data">
 
 						<!-- タイトル -->
 						<div class="form-group">
