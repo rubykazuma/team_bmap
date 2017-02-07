@@ -2,6 +2,20 @@
 			<div class="row">
 				<div class="col-sm-2"></div>
 				<div class="col-sm-8">
+				<div class="col-sm-4"></div>
+				<div class="col-sm-8">
+					<div class="register-error">
+						<?php
+							if(isset($_SESSION['error']) && ($_SESSION['error'] == 'nickname' || $_SESSION['error'] == 'both')){
+								echo 'Please enter other Use Name.'.'<br>';
+							}
+							if(isset($_SESSION['error']) && ($_SESSION['error'] == 'email' || $_SESSION['error'] == 'both')){
+								echo 'Please enter other Email.';
+							}
+							$_SESSION['error'] = null;
+						?>
+					</div>
+				</div>
 					<form method="post" action="/b_map/users/create" class="form-horizontal">
 					<!-- ユーザーネーム -->
 						<div class="form-group">

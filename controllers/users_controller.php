@@ -1,5 +1,7 @@
 <?php
 
+  session_start();
+
   //モデルの呼び出し
   require('models/user.php');
 
@@ -39,20 +41,19 @@
 
   class UsersController {
       function register() {
-          $resource = 'users';
-          $action = 'register';
-          require('views/layout/application.php');
+        $resource = 'users';
+        $action = 'register';
+        require('views/layout/application.php');
       }
 
       function create($user_data){
-          $user = new User($user_data);
-          $return = $user->create($user_data);
-          // 重複していた場合は登録画面へ、登録完了時は、トップページへ遷移(未完成)
-          if($result == 'error'){
-            header('Location: /b_map/users/register');
-          } else {
-            header('Location: /b_map/posts/home');
-          }
+        $user = new User($user_data);
+        $return = $user->create($user_data);
+        if($return == $_SESSION['error']){
+          header('Location: /b_map/users/register');
+        } else {
+          header('Location: /b_map/posts/home');
+        }
       }
 
       function login() {
