@@ -15,7 +15,7 @@
                     <div class="row-fluid">
                       ><img src="<?php
                     $i = 0;
-                    foreach ($viewOptions as $key): ?>
+                    foreach ($viewOptions as $viewOption): ?>
                       <?php if ($i != 0 && $i % 4 == 0): ?>
                           </div><!-- row-fluid -->
                         </div><!-- item -->
