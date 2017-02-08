@@ -63,7 +63,23 @@
 						  <div class="col-sm-7">
 						    <label class="select-image" for="file_photo">
 									Select
-									<input type="file" id="file_photo" name="subImage" class="sub-image" style="display:none;">
+									<input type="file" name="subImage1" class="sub-image" style="display:none;">
+								</label>
+						    <label class="select-image" for="file_photo">
+									Select
+									<input type="file" name="subImage2" class="sub-image" style="display:none;">
+								</label>
+						    <label class="select-image" for="file_photo">
+									Select
+									<input type="file" name="subImage3" class="sub-image" style="display:none;">
+								</label>
+						    <label class="select-image" for="file_photo">
+									Select
+									<input type="file" name="subImage4" class="sub-image" style="display:none;">
+								</label>
+						    <label class="select-image" for="file_photo">
+									Select
+									<input type="file" name="subImage5" class="sub-image" style="display:none;">
 								</label>
 						  </div>
 						</div>
