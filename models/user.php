@@ -1,7 +1,5 @@
 <?php
 
-	session_start();
-
 	class User{
 
 		//プロパティ（db接続オブジェクト)
@@ -16,7 +14,7 @@
 		$this->dbconnect = $db;
 		}
 
-		function logput($id){
+		function logout($user_id){
 			// セッション情報に上書きして空にする
 			$_SESSION = array();
 			if (ini_get("session.use_cookies")) {
@@ -26,15 +24,13 @@
 				$prams["secure"], $params["httponly"]
 				);
 			}
-
 			session_destroy();
 
 			// cookie情報も削除
-			setcookie('email', '', time() -3600);
-			setcookie('password', '', time() -3600);
+			// setcookie('email', '', time() -3600);
+			// setcookie('password', '', time() -3600);
 
-			header('Location:login.php');
-			exit();
+			return ;
 		}
 
 		function profilechg($id){
