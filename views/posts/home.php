@@ -3,22 +3,22 @@
         <div class="row">
           <div class="visible-lg visible-md">
             <ul id="imagemap">
-              <li id="north_amerika"><a href="/b_map/posts/choose"></a></li>
-              <li id="south_america"><a href="kanto/tokyo.html"></a></li>
-              <li id="eurasia"><a href="kansai/osaka.html"></a></li>
-              <li id="asia"><a href="tohoku/miyagi</l"></a></li>
-              <li id="africa"><a href="toukai/shizuoka.html"></a></li>
-              <li id="oceania"><a href="hokuriku/nagano.html"></a></li>
+              <li id="north_amerika"><a href="/b_map/posts/choose/0"></a></li>
+              <li id="south_america"><a href="/b_map/posts/choose/1"></a></li>
+              <li id="eurasia"><a href="/b_map/posts/choose/2"></a></li>
+              <li id="asia"><a href="/b_map/posts/choose/3"></a></li>
+              <li id="africa"><a href="/b_map/posts/choose/4"></a></li>
+              <li id="oceania"><a href="/b_map/posts/choose/5"></a></li>
             </ul>
           </div>
           <!-- ●地図下のリスト -->
           <ul id="area">
-            <li><a href="hokkaido/hokkaido.html">北アメリカ</a></li>
-            <li><a href="kanto/tokyo.html">南アメリカ</a></li>
-            <li><a href="kansai/osaka.html">ユーラシア</a></li>
-            <li><a href="tohoku/miyagi.html">アジア</a></li>
-            <li><a href="toukai/shizuoka.html">アフリカ</a></li>
-            <li><a href="hokuriku/nagano.html">オセアニア</a></li>
+            <li><a href="/b_map/posts/choose/0">北アメリカ</a></li>
+            <li><a href="/b_map/posts/choose/1">南アメリカ</a></li>
+            <li><a href="/b_map/posts/choose/2">ユーラシア</a></li>
+            <li><a href="/b_map/posts/choose/3">アジア</a></li>
+            <li><a href="/b_map/posts/choose/4">アフリカ</a></li>
+            <li><a href="/b_map/posts/choose/5">オセアニア</a></li>
           </ul>
         </div><!-- world map -->
         <br>
