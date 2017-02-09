@@ -1,5 +1,7 @@
 <?php
 
+  session_start();
+
   //モデルの呼び出し
   require('models/user.php');
 
@@ -33,19 +35,25 @@
         $controller->update($_POST,$id);
         break;
       default:
-        # code...
+        # code
         break;
     }
 
   class UsersController {
       function register() {
-          $resource = 'users';
-          $action = 'register';
-          require('views/layout/application.php');
+        $resource = 'users';
+        $action = 'register';
+        require('views/layout/application.php');
       }
 
-      function create($post_data){
-
+      function create($user_data){
+        $user = new User($user_data);
+        $return = $user->create($user_data);
+        if($return == $_SESSION['error']){
+          header('Location: /b_map/users/register');
+        } else {
+          header('Location: /b_map/posts/home');
+        }
       }
 
       function login($user_data) {
@@ -89,9 +97,8 @@
       }
 
       function profilechg($id){
-        // モデルを呼び出す 
+
         $user = new User();
-        // モデルのprofilechgメソッドを実行する
         $viewOptinons = $user->profilechg($id);
         $resource = 'users';
         $action = 'profilechg';
