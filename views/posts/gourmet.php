@@ -43,7 +43,7 @@
     <!-- title -->
       <div class="form-group">
         <div class="col-md-12">
-          <h3><?php echo $viewOptions['title'][1]; ?></h3>
+          <h3><?php echo $viewOptions['title'][0]; ?></h3>
         </div>
       </div>
       <br>
