@@ -48,43 +48,43 @@
 
       }
 
-      function login($user_data) {
-      $resource = 'users';
-      $action = 'login';
-      $errorMessage = "";
 
-
-      // 入力チェックのプログラムを書く
-      if (!empty($user_data)) {
-        // var_dump("po");
-        // $email = htmlspecialchars($_POST['email']);
-        // ログインの処理
-        if (isset($user_data['email']) && $user_data['password'] != '') {
-          // モデルを呼び出す
-          $user = new User();
-          // モデルのprofilechgメソッドを実行する
-          $viewOptions = $user->login($user_data);  
-           // var_dump($viewOptions);
-          //if文を書く
-          
-          if ($viewOptions == NULL){
-              $errorMessage = "ログイン情報が間違ってます。やり直してください。";  
+      function login($user_data){
+        $resource = 'users';
+        $action = 'login';
+        $errorMessage = "";
+        // 入力チェックのプログラムを書く
+        if (!empty($user_data)) {
+          // var_dump("po");
+          // $email = htmlspecialchars($_POST['email']);
+          // ログインの処理
+          if (isset($user_data['email']) && $user_data['password'] != '') {
+            // モデルを呼び出す
+            $user = new User();
+            // モデルのprofilechgメソッドを実行する
+            $viewOptions = $user->login($user_data);
+            // var_dump($viewOptions);
+            //if文を書く
+            if ($viewOptions == NULL){
+              $errorMessage = "Please enter again.";
               $resource = 'users';
               $action = 'login';
-          }else{
+            }else{
+
               $_SESSION['userid']=$viewOptions['userid'];
               $_SESSION['nickname']=$viewOptions['nickname'];
               $_SESSION['email']=$viewOptions['email'];
               // $resource = 'posts';
               // $action = 'home';
 
-            header('Location: ../posts/home');
+              header('Location: ../posts/home');
+            }
           }
-       } 
+        }
+        require('views/layout/application.php');
+
       }
-      
-      require('views/layout/application.php');
-      }
+
 
       function logout(){
 
