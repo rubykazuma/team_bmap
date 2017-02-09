@@ -37,6 +37,36 @@ class Post{
 			// 取得結果を返す
 			return $rtn;
 		}
+
+		// gourmet表示に必要なデータを取得
+		function gourmet($id){
+			// SQLの記述(SELECT文)
+			$sql = sprintf('SELECT
+							          `posts`.id
+							         ,`posts`.title
+							         ,`posts`.contents
+							         ,`posts`.mainPictureAddress
+							         ,`posts`.area
+							         ,`posts`.genre
+							         ,`posts`.userid
+							         ,`subPicture`.subPictureAddress
+							         ,`posts`.updatedate
+							FROM      `posts`
+							LEFT JOIN `subPicture`
+							ON        `posts`.id    = `subPicture`.postsid
+							WHERE     `posts`.genre = 1
+							AND       `posts`.area  = %d' , $id);
+			// SQLの実行
+			$results = mysqli_query($this->dbconnect, $sql) or die(mysqli_error($this->dbconnect));
+			// 実行結果を取得し、配列に格納
+			$rtn = array();
+			while ($result = mysqli_fetch_assoc($results)) {
+						 $rtn[] = $result;
+			}
+			// 取得結果を返す
+			return $rtn;
+		}
+
     function choose($id){
 
     // $sql = 'SELECT `id`, `title`, `contents`, `mainPictureAddress`, `area`, `genre`, `userid`, `createdate`, `updatedate` FROM `posts` WHERE 1';
@@ -55,5 +85,6 @@ class Post{
       //取得結果を返す
       return $rtn;
       }
+
 }
 ?>
