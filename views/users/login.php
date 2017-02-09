@@ -8,9 +8,11 @@
       <div class="row">
         <div class="col-sm-2"></div>
         <div class="col-sm-8">
-        <?php 
-        	echo $errorMessage;
-         ?>
+
+        <?php if ($errorMessage != null): ?>
+          <?php echo $errorMessage;?>
+        <?php endif ?>
+
           <form method="post" action="" class="form-horizontal">
 
           <!-- メールアドレス -->
