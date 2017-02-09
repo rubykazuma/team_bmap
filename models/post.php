@@ -54,8 +54,7 @@ class post{
 							FROM      `posts`
 							LEFT JOIN `subPicture`
 							ON        `posts`.id    = `subPicture`.postsid
-							WHERE     `posts`.genre = 1
-							AND       `posts`.area  = %d' , $id);
+							WHERE     `posts`.id    =  $id' , $id);
 			// SQLの実行
 			$results = mysqli_query($this->dbconnect, $sql) or die(mysqli_error($this->dbconnect));
 			// 実行結果を取得し、配列に格納
