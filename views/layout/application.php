@@ -1,7 +1,7 @@
 <?php
     $adjust_string = '';
 
-    if (($action == 'profilechg') || ($action == 'gourmet') || ($action == 'spot') || ($action == 'edit') || ($action == 'delete') || ($action == 'mypage')){
+    if (($action == 'profilechg') || ($action == 'gourmet') || ($action == 'spot') || ($action == 'edit') || ($action == 'delete') || ($action == 'mypage') || ($action == 'choose')){
       $adjust_string = '../';
     }
 ?>

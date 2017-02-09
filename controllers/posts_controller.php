@@ -12,7 +12,7 @@
    			$controller->home();
    			break;
    		case 'choose':
-   			$controller->choose();
+   			$controller->choose($id);
    			break;
    		case 'spot':
    			$controller->spot($id);
@@ -35,9 +35,6 @@
       case 'delete':
         $controller->delete($id);
         break;
-      case 'mypage':
-        $controller->mypage($id);
-        break;
    		default:
    			# code...
    			break;
@@ -53,8 +50,24 @@
           // var_dump($viewOptions);
           require('views/layout/CustomApplication.php');
       }
+      // ↑ここで使えるようにもう一度記入  URLで指示されたファイルを呼び出す処理をしている
 
-      function choose() {
+      function choose($id) {
+          $post = new Post();
+          $viewOptions = $post->choose($id);
+
+          $spot = array();
+          $gourmet = array();
+          
+          foreach ($viewOptions as $data) {
+            if ($data['genre']=='0') {
+              $spot[] = $data;
+            }elseif ($data['genre']=='1') {
+              $gourmet[] = $data;
+            }
+          }
+          // var_dump($viewOptions);
+
           $resource = 'posts';
           $action = 'choose';
           require('views/layout/CustomApplication.php');
@@ -97,14 +110,6 @@
 
       function delete($id){
 
-      }
-
-      function mypage($id){
-          $post = new Post();
-          $posts_data = $post->mypage($id);
-          $resource = 'posts';
-          $action = 'mypage';
-          require('views/layout/application.php');
       }
    }
 ?>
