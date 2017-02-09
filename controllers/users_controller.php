@@ -17,7 +17,7 @@
         $controller->create($_POST);
         break;
       case 'login':
-        $controller->login();
+        $controller->login($_POST);
         break;
       case 'logout':
         $controller->logout();
@@ -56,10 +56,40 @@
         }
       }
 
-      function login() {
-          $resource = 'users';
-          $action = 'login';
-          require('views/layout/application.php');
+      function login($user_data) {
+      $resource = 'users';
+      $action = 'login';
+
+      // 入力チェックのプログラムを書く
+      if (!empty($user_data)) {
+        // var_dump("po");
+        // $email = htmlspecialchars($_POST['email']);
+        // ログインの処理
+        if (isset($user_data['email']) && $user_data['password'] != '') {
+          // モデルを呼び出す
+          $user = new User();
+          // モデルのprofilechgメソッドを実行する
+          $viewOptions = $user->login($user_data);  
+           // var_dump($viewOptions);
+          //if文を書く
+          
+          if ($viewOptions == NULL){
+              $errorMessage = "ログイン情報が間違ってます。やり直してください。";  
+              $resource = 'users';
+              $action = 'login';
+          }else{
+              $_SESSION['userid']=$viewOptions['userid'];
+              $_SESSION['nickname']=$viewOptions['nickname'];
+              $_SESSION['email']=$viewOptions['email'];
+              // $resource = 'posts';
+              // $action = 'home';
+
+            header('Location: ../posts/home');
+          }
+       } 
+      }
+      
+      require('views/layout/application.php');
       }
 
       function logout(){
@@ -67,6 +97,7 @@
       }
 
       function profilechg($id){
+
         $user = new User();
         $viewOptinons = $user->profilechg($id);
         $resource = 'users';
@@ -87,4 +118,6 @@
       }
 
    }
+ 
+
 ?>
