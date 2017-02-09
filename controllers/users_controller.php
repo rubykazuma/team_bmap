@@ -15,7 +15,7 @@
         $controller->create($_POST);
         break;
       case 'login':
-        $controller->login();
+        $controller->login($_POST);
         break;
       case 'logout':
         $controller->logout();
@@ -48,33 +48,48 @@
 
       }
 
-      function login() {
-
-      // 入力チェックのプログラムを書く
-      if (!empty($_POST)) {
-        var_dump("po");
-      // $email = htmlspecialchars($_POST['email']);
-      // ログインの処理
-      if (isset($_POST['email']) && $_POST['password'] != '') {
-        $sql=sprintf('SELECT * FROM members WHERE email = "%s" AND password = "%s"',
-          mysqli_real_escape_string($db, $_POST['email']),
-          mysqli_real_escape_string($db, sha1($_POST['password']))
-          );
-        $record = mysqli_query($db, $sql) or die (mysqli_error($db));   
-
-    } 
-          
-      }
+      function login($user_data) {
       $resource = 'users';
       $action = 'login';
+
+      // 入力チェックのプログラムを書く
+      if (!empty($user_data)) {
+        // var_dump("po");
+        // $email = htmlspecialchars($_POST['email']);
+        // ログインの処理
+        if (isset($user_data['email']) && $user_data['password'] != '') {
+          // モデルを呼び出す
+          $user = new User();
+          // モデルのprofilechgメソッドを実行する
+          $viewOptions = $user->login($user_data);  
+           // var_dump($viewOptions);
+          //if文を書く
+          
+          if ($viewOptions == NULL){
+              $errorMessage = "ログイン情報が間違ってます。やり直してください。";  
+              $resource = 'users';
+              $action = 'login';
+          }else{
+              $_SESSION['userid']=$viewOptions['userid'];
+              $_SESSION['nickname']=$viewOptions['nickname'];
+              $_SESSION['email']=$viewOptions['email'];
+              // $resource = 'posts';
+              // $action = 'home';
+
+            header('Location: ../posts/home');
+          }
+       } 
+      }
+      
       require('views/layout/application.php');
       }
+
       function logout(){
 
       }
 
       function profilechg($id){
-        // モデルを呼び出す
+        // モデルを呼び出す 
         $user = new User();
         // モデルのprofilechgメソッドを実行する
         $viewOptinons = $user->profilechg($id);
@@ -95,6 +110,7 @@
         header('Location: /b_map/posts/home');
       }
 
-   
- }
+   }
+ 
+
 ?>
