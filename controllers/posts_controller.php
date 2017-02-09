@@ -80,6 +80,9 @@
       }
 
       function gourmet($id) {
+          $post = new Post();
+          $viewOptions = $post->gourmet($id);
+
           $resource = 'posts';
           $action = 'gourmet';
           require('views/layout/application.php');

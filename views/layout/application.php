@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../<?php echo $adjust_string; ?>webroot/assets/js/bootstrap.js">
   <link rel="stylesheet" href="../<?php echo $adjust_string; ?>webroot/assets/css/base.css">
   <!-- fabcon set -->
-  <link rel="icon" type="image/png" href="../<?php echo $adjust_string; ?>webroot/assets/images/favi.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../<?php echo $adjust_string; ?>webroot/assets/images/newFavi2.png" sizes="32x32">
 </head>
 
 <body>
