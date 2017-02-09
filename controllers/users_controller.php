@@ -53,6 +53,7 @@
       $action = 'login';
       $errorMessage = "";
 
+
       // 入力チェックのプログラムを書く
       if (!empty($user_data)) {
         // var_dump("po");
@@ -90,7 +91,7 @@
       }
 
       function profilechg($id){
-        // モデルを呼び出す 
+
         $user = new User();
         // モデルのprofilechgメソッドを実行する
         $viewOptinons = $user->profilechg($id);

@@ -1,5 +1,5 @@
 <?php
-class post{
+class Post{
 		//プロパティ（db接続オブジェクト)
 		private $dbconnect = '';
 		//コンストラクタ
@@ -65,5 +65,25 @@ class post{
 			// 取得結果を返す
 			return $rtn;
 		}
+
+    function choose($id){
+
+    // $sql = 'SELECT `id`, `title`, `contents`, `mainPictureAddress`, `area`, `genre`, `userid`, `createdate`, `updatedate` FROM `posts` WHERE 1';
+
+    $sql = sprintf('SELECT `id`, `title`, `contents`, `mainPictureAddress`, `area`, `genre`, `userid`, `createdate`, `updatedate` 
+                    FROM `posts` WHERE `area` = %d' ,$id);
+
+    $results = mysqli_query($this->dbconnect, $sql) or die(mysqli_error($this->dbconnect));
+
+      //実行結果を取得し、配列に格納
+      $rtn = array();
+      while ($result = mysqli_fetch_assoc($results)) {
+        $rtn[] = $result;
+      }
+
+      //取得結果を返す
+      return $rtn;
+      }
+
 }
 ?>
