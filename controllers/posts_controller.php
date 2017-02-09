@@ -1,5 +1,7 @@
 <?php
 
+ session_start();
+
 	//モデルの呼び出し
 	require('models/post.php');
 
@@ -35,6 +37,9 @@
       case 'delete':
         $controller->delete($id);
         break;
+      case 'mypage':
+        $controller->mypage($id);
+        break;
    		default:
    			# code...
    			break;
@@ -58,7 +63,7 @@
 
           $spot = array();
           $gourmet = array();
-          
+
           foreach ($viewOptions as $data) {
             if ($data['genre']=='0') {
               $spot[] = $data;
@@ -107,6 +112,13 @@
 
       function delete($id){
 
+      }
+      function mypage($id){
+          $post = new Post();
+          $posts_data = $post->mypage($id);
+          $resource = 'posts';
+          $action = 'mypage';
+          require('views/layout/application.php');
       }
    }
 ?>
