@@ -74,8 +74,11 @@
       }
 
       function spot($id) {
+          $post = new post();
+          $viewOptions = $post->spot($id);
           $resource = 'posts';
           $action = 'spot';
+          //var_dump($viewOptions);
           require('views/layout/application.php');
       }
 
@@ -84,8 +87,7 @@
           $viewOptions = $post->gourmet($id);
           $resource = 'posts';
           $action = 'gourmet';
-          var_dump($viewOptions);
-          var_dump(array_slice($viewOptions, 1, 1, true));
+          //var_dump($viewOptions);
           require('views/layout/application.php');
       }
 
