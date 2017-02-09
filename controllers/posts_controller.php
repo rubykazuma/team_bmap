@@ -67,8 +67,11 @@
       }
 
       function gourmet($id) {
+          $post = new post();
+          $viewOptions = $post->gourmet($id);
           $resource = 'posts';
           $action = 'gourmet';
+//          var_dump($viewOptions);
           require('views/layout/application.php');
       }
 
