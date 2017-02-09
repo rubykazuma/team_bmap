@@ -58,7 +58,7 @@
                 </a>
               </li>
             <?php } else { ?>
-            <!-- ログインしていない場合(新規投稿、個別ページのリンクが無効、ログインページのリンクが有効) -->
+            <!-- ログインしていない場合(ログインページのみリンクが有効) -->
               <li>
                 <a href="" class="new">
                   <spn class="glyphicon glyphicon-edit"></spn>
