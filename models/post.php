@@ -37,9 +37,12 @@ class Post{
 			// 取得結果を返す
 			return $rtn;
 		}
-    function choose(){
+    function choose($id){
 
-    $sql = 'SELECT `id`, `title`, `contents`, `mainPictureAddress`, `area`, `genre`, `userid`, `createdate`, `updatedate` FROM `posts` WHERE 1';
+    // $sql = 'SELECT `id`, `title`, `contents`, `mainPictureAddress`, `area`, `genre`, `userid`, `createdate`, `updatedate` FROM `posts` WHERE 1';
+
+    $sql = sprintf('SELECT `id`, `title`, `contents`, `mainPictureAddress`, `area`, `genre`, `userid`, `createdate`, `updatedate` 
+                    FROM `posts` WHERE `area` = %d' ,$id);
 
     $results = mysqli_query($this->dbconnect, $sql) or die(mysqli_error($this->dbconnect));
 

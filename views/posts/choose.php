@@ -5,7 +5,7 @@
             <div class="well">
               <div id="spotCarousel" class="carousel slide">
                 <ol class="carousel-indicators">
-                  <?php $cnt = count($viewOptions); ?>
+                  <?php $cnt = count($spot); ?>
                   <?php $cnt = ceil($cnt/4); ?>
                   <?php for ($i=0; $i < $cnt; $i++) :?>
                     <!-- 1番目のインジケータは● -->
@@ -21,7 +21,7 @@
                 <div class="carousel-inner">
                       <?php
                     $i = 0;
-                    foreach ($viewOptions as $key): ?>
+                    foreach ($spot as $key): ?>
                       <?php if ($i != 0 && $i % 4 == 0): ?>
                           </div><!-- row-fluid -->
                         </div><!-- item -->
@@ -34,9 +34,10 @@
                         <?php endif ?>
                           <div class="row-fluid">
                       <?php endif ?>
-                        <div class="span3"><a href="#x" class="thumbnail"><img src="../webroot/pictures/<?php echo $key['mainPictureAddress']; ?>" alt="Image" style="max-width:100%;" /></a></div>
+                        <div class="span3"><a href="/b_map/posts/spot/<?php echo $key['id']; ?>" class="thumbnail"><img src="../../webroot/pictures/<?php echo $key['mainPictureAddress']; ?>" alt="Image" style="max-width:100%;" /></a></div>
                       <?php $i++; ?>
                     <?php endforeach ?>
+                    </div>
                     </div>
                 </div><!--/carousel-inner-->
                 <a class="left carousel-control" href="#spotCarousel" data-slide="prev">‹</a>
@@ -53,7 +54,7 @@
             <div class="well">
               <div id="gourmetCarousel" class="carousel slide">
                 <ol class="carousel-indicators">
-                  <?php $cnt = count($viewOptions); ?>
+                  <?php $cnt = count($gourmet); ?>
                   <?php $cnt = ceil($cnt/4); ?>
                   <?php for ($i=0; $i < $cnt; $i++) :?>
                     <!-- 1番目のインジケータは● -->
@@ -69,7 +70,7 @@
                 <div class="carousel-inner">
                       <?php
                     $i = 0;
-                    foreach ($viewOptions as $key): ?>
+                    foreach ($gourmet as $key): ?>
                       <?php if ($i != 0 && $i % 4 == 0): ?>
                           </div><!-- row-fluid -->
                         </div><!-- item -->
@@ -82,9 +83,10 @@
                         <?php endif ?>
                           <div class="row-fluid">
                       <?php endif ?>
-                        <div class="span3"><a href="#x" class="thumbnail"><img src="../webroot/pictures/<?php echo $key['mainPictureAddress']; ?>" alt="Image" style="max-width:100%;" /></a></div>
+                        <div class="span3"><a href="/b_map/posts/gourmet/<?php echo $key['id']; ?>" class="thumbnail"><img src="../../webroot/pictures/<?php echo $key['mainPictureAddress']; ?>" alt="Image" style="max-width:100%;" /></a></div>
                       <?php $i++; ?>
                     <?php endforeach ?>
+                    </div>
                     </div>
                 </div><!--/carousel-inner-->
                 <a class="left carousel-control" href="#gourmetCarousel" data-slide="prev">‹</a>
