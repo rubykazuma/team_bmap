@@ -1,7 +1,12 @@
     <!-- title -->
       <div class="form-group">
         <div class="col-md-12">
-          <h3>バロット美味しかった</h3>
+          <h3>
+            <?php foreach ($viewOptions as $key): ?>
+              <?php echo $key['title']; ?>
+              <?php break; ?>
+            <?php endforeach ?>
+          </h3>
         </div>
       </div>
       <br>
@@ -18,24 +23,29 @@
                 <div class="carousel slide" id="Carousel">
                 <!-- Carousel items -->
                   <div class="carousel-inner">
-                    <div class="active item" data-slide-number="0">
-                      <img src="../../webroot/pictures/20170101091010sample.jpg">
-                    </div>
-                    <div class="item" data-slide-number="1">
-                      <img src="../../webroot/pictures/20170105091010sample.jpg">
-                    </div>
-                    <div class="item" data-slide-number="2">
-                      <img src="../../webroot/pictures/20170110091010sample.jpg">
-                    </div>
-                    <div class="item" data-slide-number="3">
-                      <img src="../../webroot/pictures/20170115091010sample.jpg">
-                    </div>
-                    <div class="item" data-slide-number="4">
-                      <img src="../../webroot/pictures/20170201071010sample.jpg">
-                    </div>
-                    <div class="item" data-slide-number="5">
-                      <img src="../../webroot/pictures/20170205071010sample.jpg">
-                    </div>
+                  <?php $i = 0;
+                    foreach ($viewOptions as $key): ?>
+                      <?php if ($key['subPictureAddress'] != NULL): ?>
+                        <?php if ($i == 0): ?>
+                          <div class="active item" data-slide-number="<?php echo($i); ?>">
+                            <img src="../../webroot/pictures/<?php echo $key['mainPictureAddress']; ?>">
+                          </div>
+                          <?php $i++; ?>
+                          <div class="item" data-slide-number="<?php echo($i); ?>">
+                            <img src="../../webroot/pictures/<?php echo $key['subPictureAddress']; ?>">
+                          </div>
+                        <?php else: ?>
+                          <div class="item" data-slide-number="<?php echo($i); ?>">
+                            <img src="../../webroot/pictures/<?php echo $key['subPictureAddress']; ?>">
+                          </div>
+                        <?php endif ?>
+                        <?php $i++; ?>
+                      <?php else: ?>
+                        <div class="active item" data-slide-number="<?php echo($i); ?>">
+                          <img src="../../webroot/pictures/<?php echo $key['mainPictureAddress']; ?>">
+                        </div>
+                      <?php endif ?>
+                  <?php endforeach ?>
                   </div><!-- Carousel nav -->
                 </div>
                 </div>
@@ -48,7 +58,13 @@
               <div class="form-group">
                 <!-- <label class="col-md-4 control-label"></label> -->
                 <div class="col-md-offset-3">
-                  <h4>バロットとは成長途中のゆで卵です</h4>
+                  <h4>
+                    <?php foreach ($viewOptions as $key): ?>
+                      <!-- nl2br関数で改行を有効化 -->
+                      <?php echo nl2br($key['contents']); ?>
+                      <?php break; ?>
+                    <?php endforeach ?>
+                  </h4>
                   <br>
                   <br>
                 </div>
@@ -73,12 +89,102 @@
                     <div class="carousel-inner">
                       <div class="item active">
                         <div class="row">
-                          <div class="col-md-2"><a class="thumbnail" id="carousel-selector-0"><img src="../../webroot/pictures/20170101091010sample.jpg" alt="Image" style="max-width:100%;"></a></div>
-                          <div class="col-md-2"><a class="thumbnail" id="carousel-selector-1"><img src="../../webroot/pictures/20170105091010sample.jpg" alt="Image" style="max-width:100%;"></a></div>
-                          <div class="col-md-2"><a class="thumbnail" id="carousel-selector-2"><img src="../../webroot/pictures/20170110091010sample.jpg" alt="Image" style="max-width:100%;"></a></div>
-                          <div class="col-md-2"><a class="thumbnail" id="carousel-selector-3"><img src="../../webroot/pictures/20170115091010sample.jpg" alt="Image" style="max-width:100%;"></a></div>
-                          <div class="col-md-2"><a class="thumbnail" id="carousel-selector-4"><img src="../../webroot/pictures/20170115091010sample.jpg" alt="Image" style="max-width:100%;"></a></div>
-                          <div class="col-md-2"><a class="thumbnail" id="carousel-selector-4"><img src="../../webroot/pictures/20170115091010sample.jpg" alt="Image" style="max-width:100%;"></a></div>
+                          <?php $i = 0;
+                            foreach ($viewOptions as $key): ?>
+                              <?php if(count($viewOptions) == 5): ?>
+                                <?php if ($i == 0): ?>
+                                  <div class="col-md-2">
+                                    <a class="thumbnail" id="carousel-selector-<?php echo($i); ?>">
+                                    <img src="../../webroot/pictures/<?php echo $key['mainPictureAddress']; ?>" alt="Image" style="max-width:100%;"></a>
+                                  </div>
+                                  <?php $i++; ?>
+                                  <div class="col-md-2">
+                                    <a class="thumbnail" id="carousel-selector-<?php echo($i); ?>">
+                                    <img src="../../webroot/pictures/<?php echo $key['subPictureAddress']; ?>" alt="Image" style="max-width:100%;"></a>
+                                  </div>
+                                <?php else: ?>
+                                  <div class="col-md-2">
+                                    <a class="thumbnail" id="carousel-selector-<?php echo($i); ?>">
+                                    <img src="../../webroot/pictures/<?php echo $key['subPictureAddress']; ?>" alt="Image" style="max-width:100%;"></a>
+                                  </div>
+                                <?php endif ?>
+                                <?php $i++; ?>
+                            <?php elseif(count($viewOptions) == 4): ?>
+                                <?php if ($i == 0): ?>
+                                  <div class="col-md-2">
+                                    <a class="thumbnail" id="carousel-selector-<?php echo($i); ?>">
+                                    <img src="../../webroot/pictures/<?php echo $key['mainPictureAddress']; ?>" alt="Image" style="max-width:100%;"></a>
+                                  </div>
+                                  <?php $i++; ?>
+                                  <div class="col-md-2">
+                                    <a class="thumbnail" id="carousel-selector-<?php echo($i); ?>">
+                                    <img src="../../webroot/pictures/<?php echo $key['subPictureAddress']; ?>" alt="Image" style="max-width:100%;"></a>
+                                  </div>
+                                <?php else: ?>
+                                  <div class="col-md-2">
+                                    <a class="thumbnail" id="carousel-selector-<?php echo($i); ?>">
+                                    <img src="../../webroot/pictures/<?php echo $key['subPictureAddress']; ?>" alt="Image" style="max-width:100%;"></a>
+                                  </div>
+                                <?php endif ?>
+                                <?php $i++; ?>
+                            <?php elseif(count($viewOptions) == 3): ?>
+                                <?php if ($i == 0): ?>
+                                  <div class="col-md-3">
+                                    <a class="thumbnail" id="carousel-selector-<?php echo($i); ?>">
+                                    <img src="../../webroot/pictures/<?php echo $key['mainPictureAddress']; ?>" alt="Image" style="max-width:100%;"></a>
+                                  </div>
+                                  <?php $i++; ?>
+                                  <div class="col-md-3">
+                                    <a class="thumbnail" id="carousel-selector-<?php echo($i); ?>">
+                                    <img src="../../webroot/pictures/<?php echo $key['subPictureAddress']; ?>" alt="Image" style="max-width:100%;"></a>
+                                  </div>
+                                <?php else: ?>
+                                  <div class="col-md-3">
+                                    <a class="thumbnail" id="carousel-selector-<?php echo($i); ?>">
+                                    <img src="../../webroot/pictures/<?php echo $key['subPictureAddress']; ?>" alt="Image" style="max-width:100%;"></a>
+                                  </div>
+                                <?php endif ?>
+                                <?php $i++; ?>
+                            <?php elseif(count($viewOptions) == 2): ?>
+                                <?php if ($i == 0): ?>
+                                  <div class="col-md-3">
+                                    <a class="thumbnail" id="carousel-selector-<?php echo($i); ?>">
+                                    <img src="../../webroot/pictures/<?php echo $key['mainPictureAddress']; ?>" alt="Image" style="max-width:100%;"></a>
+                                  </div>
+                                  <?php $i++; ?>
+                                  <div class="col-md-3">
+                                    <a class="thumbnail" id="carousel-selector-<?php echo($i); ?>">
+                                    <img src="../../webroot/pictures/<?php echo $key['subPictureAddress']; ?>" alt="Image" style="max-width:100%;"></a>
+                                  </div>
+                                <?php else: ?>
+                                  <div class="col-md-3">
+                                    <a class="thumbnail" id="carousel-selector-<?php echo($i); ?>">
+                                    <img src="../../webroot/pictures/<?php echo $key['subPictureAddress']; ?>" alt="Image" style="max-width:100%;"></a>
+                                  </div>
+                                <?php endif ?>
+                                <?php $i++; ?>
+                            <?php elseif(count($viewOptions) == 1): ?>
+                                <?php if ($key['subPictureAddress'] != NULL): ?>
+                                  <div class="col-md-6">
+                                    <a class="thumbnail" id="carousel-selector-<?php echo($i); ?>">
+                                    <img src="../../webroot/pictures/<?php echo $key['mainPictureAddress']; ?>" alt="Image" style="max-width:100%;"></a>
+                                  </div>
+                                  <?php $i++; ?>
+                                  <div class="col-md-6">
+                                    <a class="thumbnail" id="carousel-selector-<?php echo($i); ?>">
+                                    <img src="../../webroot/pictures/<?php echo $key['subPictureAddress']; ?>" alt="Image" style="max-width:100%;"></a>
+                                  </div>
+                                <?php else: ?>
+                                <!-- メイン画像のみの場合は表示させない -->
+                                <!--
+                                   <div class="col-md-12">
+                                    <a class="thumbnail" id="carousel-selector-<?php echo($i); ?>">
+                                    <img src="../../webroot/pictures/<?php echo $key['mainPictureAddress']; ?>" alt="Image" style="max-width:100%;"></a>
+                                  </div>
+                                -->
+                                <?php endif ?>
+                            <?php endif ?>
+                          <?php endforeach ?>
                         </div><!--.row-->
                       </div><!--.item-->
                       <!--  <a data-slide="prev" href="#Carousel" class="left carousel-control">
