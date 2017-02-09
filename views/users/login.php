@@ -42,6 +42,7 @@
               <div class="col-sm-4"></div>
               <div class="col-sm-8">
                 <button type="submit" class="btn form-btn">Login</button>
+                <a href="/b_map/users/register" class="btn form-btn">Register</a>
               </div>
 
             </div>
