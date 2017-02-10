@@ -40,6 +40,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
+
             <!-- ログインしている場合(新規投稿、個別ページ、ログアウトのリンクが有効) -->
             <?php if (isset($_SESSION['userid']) && !empty($_SESSION['userid'])) { ?>
               <li>
@@ -75,6 +76,7 @@
                 </a>
               </li>
             <?php } ?>
+
           </ul>
         </div>
       </div>

@@ -1,5 +1,7 @@
 <?php
 
+  session_start();
+
   //モデルの呼び出し
   require('models/user.php');
 
@@ -18,7 +20,7 @@
         $controller->login($_POST);
         break;
       case 'logout':
-        $controller->logout();
+        $controller->logout($_SESSION);
         break;
       case 'profilechg':
         $controller->profilechg($id);
@@ -86,7 +88,10 @@
       }
 
 
-      function logout(){
+      function logout($user_id){
+        $user = new User();
+        $return = $user->logout($user_id);
+        header('Location: /b_map/posts/home');
 
       }
 
