@@ -33,6 +33,33 @@
 			return ;
 		}
 
+		function create($user_data){
+			// ニックネームの重複チェック
+			$sql = sprintf('SELECT COUNT(*) AS cnt FROM user WHERE nickname = "%s"', $user_data['nickname']);
+		    $nicknameRecord = mysqli_query($this->dbconnect, $sql) or die(mysqli_error($this->dbconnect));
+		    $nicknameTable = mysqli_fetch_assoc($nicknameRecord);
+					// メールアドレスの重複チェック
+			$sql = sprintf('SELECT COUNT(*) AS cnt FROM user WHERE email = "%s"', $user_data['email']);
+		    $emailRecord = mysqli_query($this->dbconnect, $sql) or die(mysqli_error($this->dbconnect));
+		    $emailTable = mysqli_fetch_assoc($emailRecord);
+		    
+		    // 重複チェックをクリアした場合にのみDBに登録
+		    if ($nicknameTable['cnt'] == 0 && $emailTable['cnt'] == 0) {
+						$sql = sprintf("INSERT INTO `user` (`nickname`, `email`, `birthday`, `password`, `createdate`)
+														VALUES ('%s', '%s', '20170101', '%s', NOW());", $user_data['nickname'], $user_data['email'], sha1($user_data['password']));
+						$result = mysqli_query($this->dbconnect, $sql) or die(mysqli_error($this->dbconnect));
+			} elseif ($nicknameTable['cnt'] > 0 && $emailTable['cnt'] > 0) {
+				$_SESSION['error'] = 'both';
+				$result = $_SESSION['error'];
+			}	elseif ($nicknameTable['cnt'] > 0) {
+				$_SESSION['error'] = 'nickname';
+				$result = $_SESSION['error'];
+			} elseif ($emailTable['cnt'] > 0) {
+				$_SESSION['error'] = 'email';
+				$result = $_SESSION['error'];
+			} return $result;
+		}
+
 		function profilechg($id){
 			$sql = sprintf('SELECT * FROM `user` WHERE `userid` = %d', $id);
 			$results = mysqli_query($this->dbconnect, $sql) or die(mysqli_error($this->dbconnect));
