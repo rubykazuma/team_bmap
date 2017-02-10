@@ -13,12 +13,12 @@
           </div>
           <!-- ●地図下のリスト -->
           <ul id="area">
-            <li><a href="/b_map/posts/choose/0">北アメリカ</a></li>
-            <li><a href="/b_map/posts/choose/1">南アメリカ</a></li>
-            <li><a href="/b_map/posts/choose/2">ユーラシア</a></li>
-            <li><a href="/b_map/posts/choose/3">アジア</a></li>
-            <li><a href="/b_map/posts/choose/4">アフリカ</a></li>
-            <li><a href="/b_map/posts/choose/5">オセアニア</a></li>
+            <li><h5><a href="/b_map/posts/choose/0">北アメリカ</h5></a></li>
+            <li><h5><a href="/b_map/posts/choose/1">南アメリカ</a></h5></li>
+            <li><h5><a href="/b_map/posts/choose/2">ユーラシア</a></h5></li>
+            <li><h5><a href="/b_map/posts/choose/3">アジア</a></h5></li>
+            <li><h5><a href="/b_map/posts/choose/4">アフリカ</a></h5></li>
+            <li><h5><a href="/b_map/posts/choose/5">オセアニア</a></h5></li>
           </ul>
         </div><!-- world map -->
         <br>
