@@ -57,33 +57,21 @@
 			return $results;
 		}
 
-			function login($user_data){
-
-				$sql=sprintf('SELECT * FROM user WHERE email = "%s" AND password = "%s"',
-                mysqli_real_escape_string($this->dbconnect, $user_data['email']),
-             	mysqli_real_escape_string($this->dbconnect, sha1($user_data['password']))
-         		 );
-        		$record = mysqli_query($this->dbconnect, $sql) or die (mysqli_error($this->dbconnect));   
-
-        		$result = mysqli_fetch_assoc($record);
-				return $result;
 
 
-			}
+		function login($user_data){
 
-			function login($user_data){
+			$sql=sprintf('SELECT * FROM user WHERE email = "%s" AND password = "%s"',
+            mysqli_real_escape_string($this->dbconnect, $user_data['email']),
+         	mysqli_real_escape_string($this->dbconnect, sha1($user_data['password']))
+     		 );
+    		$record = mysqli_query($this->dbconnect, $sql) or die (mysqli_error($this->dbconnect));   
 
-				$sql=sprintf('SELECT * FROM user WHERE email = "%s" AND password = "%s"',
-                mysqli_real_escape_string($this->dbconnect, $user_data['email']),
-             	mysqli_real_escape_string($this->dbconnect, sha1($user_data['password']))
-         		 );
-        		$record = mysqli_query($this->dbconnect, $sql) or die (mysqli_error($this->dbconnect));   
-
-        		$result = mysqli_fetch_assoc($record);
-				return $result;
+    		$result = mysqli_fetch_assoc($record);
+			return $result;
 
 
-			}
+		}
 
 		function login($user_data){
 			$sql=sprintf('SELECT * FROM user WHERE email = "%s" AND password = "%s"',
