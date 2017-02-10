@@ -50,31 +50,31 @@ class post{
       $post_id = mysqli_insert_id($this->dbconnect);
 
 			// 画像アップロード(サブ)
-			if (isset($image_data['subImage1']) && !empty($image_data['subImage1'])) {
+			if (isset($image_data['subImage1']['name']) && !empty($image_data['subImage1']['name'])) {
 				$image = date('YmdHis') . $image_data['subImage1']['name'];
       	move_uploaded_file($image_data['subImage1']['tmp_name'], $_SERVER['DOCUMENT_ROOT'].'/b_map/webroot/pictures/'.$image);
       	$sql = "INSERT INTO `subPicture`(`postsid`, `subPictureAddress`, `createdate`) VALUES ($post_id, $image, now())";
       	mysqli_query($this->dbconnect, $sql) or die(mysqli_error($this->dbconnect));
       }
-      if (isset($image_data['subImage2']) && !empty($image_data['subImage2'])) {
+      if (isset($image_data['subImage2']['name']) && !empty($image_data['subImage2']['name'])) {
 				$image = date('YmdHis') . $image_data['subImage2']['name'];
       	move_uploaded_file($image_data['subImage2']['tmp_name'], $_SERVER['DOCUMENT_ROOT'].'/b_map/webroot/pictures/'.$image);
       	$sql = "INSERT INTO `subPicture`(`postsid`, `subPictureAddress`, `createdate`) VALUES ($post_id, $image, now())";
       	mysqli_query($this->dbconnect, $sql) or die(mysqli_error($this->dbconnect));
       }
-      if (isset($image_data['subImage3']) && !empty($image_data['subImage3'])) {
+      if (isset($image_data['subImage3']['name']) && !empty($image_data['subImage3']['name'])) {
 				$image = date('YmdHis') . $image_data['subImage3']['name'];
       	move_uploaded_file($image_data['subImage3']['tmp_name'], $_SERVER['DOCUMENT_ROOT'].'/b_map/webroot/pictures/'.$image);
       	$sql = "INSERT INTO `subPicture`(`postsid`, `subPictureAddress`, `createdate`) VALUES ($post_id, $image, now())";
       	mysqli_query($this->dbconnect, $sql) or die(mysqli_error($this->dbconnect));
       }
-      if (isset($image_data['subImage4']) && !empty($image_data['subImage4'])) {
+      if (isset($image_data['subImage4']['name']) && !empty($image_data['subImage4']['name'])) {
 				$image = date('YmdHis') . $image_data['subImage4']['name'];
       	move_uploaded_file($image_data['subImage4']['tmp_name'], $_SERVER['DOCUMENT_ROOT'].'/b_map/webroot/pictures/'.$image);
       	$sql = "INSERT INTO `subPicture`(`postsid`, `subPictureAddress`, `createdate`) VALUES ($post_id, $image, now())";
       	mysqli_query($this->dbconnect, $sql) or die(mysqli_error($this->dbconnect));
       }
-      if (isset($image_data['subImage5']) && !empty($image_data['subImage5'])) {
+      if (isset($image_data['subImage5']['name']) && !empty($image_data['subImage5']['name'])) {
 				$image = date('YmdHis') . $image_data['subImage5']['name'];
       	move_uploaded_file($image_data['subImage5']['tmp_name'], $_SERVER['DOCUMENT_ROOT'].'/b_map/webroot/pictures/'.$image);
       	$sql = "INSERT INTO `subPicture`(`postsid`, `subPictureAddress`, `createdate`) VALUES ($post_id, $image, now())";
