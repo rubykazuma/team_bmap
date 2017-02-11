@@ -45,7 +45,7 @@ class post{
 
 			$sql = sprintf("INSERT INTO `posts`(`title`, `contents`, `mainPictureAddress`, `area`, `genre`, `userid`, `createdate`)
 											VALUES ('%s', '%s', '%s', '%d', '%d', '%d', now());",
-											$add_data['title'], $add_data['contents'], $image, $add_data['area'], $add_data['genre'], '1');
+											$add_data['title'], $add_data['contents'], $image, $add_data['area'], $add_data['genre'], $_SESSION['userid']);
 			mysqli_query($this->dbconnect, $sql) or die(mysqli_error($this->dbconnect));
       $post_id = mysqli_insert_id($this->dbconnect);
 
