@@ -80,6 +80,7 @@
 
       function create($add_data,$image_data){
         $post = new Post();
+        // var_dump($image_data);
         $return = $post->create($add_data,$image_data);
         header('Location: /b_map/posts/home');
       }

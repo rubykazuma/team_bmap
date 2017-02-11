@@ -50,10 +50,11 @@
 						<div class="form-group">
 						  <label class="col-sm-3 control-label">Main Image</label>
 						  <div class="col-sm-7">
-						    <label class="select-image" for="file_photo">
+						    <!-- <label class="select-image" for="file_photo">
 									Select
-									<input type="file" id="file_photo" name="mainImage" class="main-image" style="display:none;" required>
-								</label>
+									<input type="file" id="file_photo" name="image[]" class="main-image" style="display:none;" required>
+								</label> -->
+								<input type="file" name="image[]" class="" style="" required/>
 						  </div>
 						</div>
 
@@ -61,26 +62,31 @@
 						<div class="form-group">
 						  <label class="col-sm-3 control-label">Sub Image</label>
 						  <div class="col-sm-7">
-						    <label class="select-image" for="file_photo">
+						    <!-- <label class="select-image" for="file_photo">
 									Select
-									<input type="file" name="subImage1" class="sub-image" style="display:none;">
+									<input type="file" name="image[]" class="sub-image" style="display:none;">
 								</label>
 						    <label class="select-image" for="file_photo">
 									Select
-									<input type="file" name="subImage2" class="sub-image" style="display:none;">
+									<input type="file" name="image[]" class="sub-image" style="display:none;">
 								</label>
 						    <label class="select-image" for="file_photo">
 									Select
-									<input type="file" name="subImage3" class="sub-image" style="display:none;">
+									<input type="file" name="image[]" class="sub-image" style="display:none;">
 								</label>
 						    <label class="select-image" for="file_photo">
 									Select
-									<input type="file" name="subImage4" class="sub-image" style="display:none;">
+									<input type="file" name="image[]" class="sub-image" style="display:none;">
 								</label>
 						    <label class="select-image" for="file_photo">
 									Select
-									<input type="file" name="subImage5" class="sub-image" style="display:none;">
-								</label>
+									<input type="file" name="image[]" class="sub-image" style="display:none;">
+								</label> -->
+								<input type="file" name="image[]" class="" style="" /><br>
+								<input type="file" name="image[]" class="" style="" /><br>
+								<input type="file" name="image[]" class="" style="" /><br>
+								<input type="file" name="image[]" class="" style="" /><br>
+								<input type="file" name="image[]" class="" style="" /><br>
 						  </div>
 						</div>
 
