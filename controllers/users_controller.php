@@ -1,5 +1,7 @@
 <?php
 
+  session_start();
+
   //モデルの呼び出し
   require('models/user.php');
 
@@ -15,10 +17,10 @@
         $controller->create($_POST);
         break;
       case 'login':
-        $controller->login();
+        $controller->login($_POST);
         break;
       case 'logout':
-        $controller->logout();
+        $controller->logout($_SESSION);
         break;
       case 'profilechg':
         $controller->profilechg($id);
@@ -33,7 +35,7 @@
         $controller->update($_POST,$id);
         break;
       default:
-        # code
+        # code...
         break;
     }
 
@@ -44,22 +46,63 @@
           require('views/layout/application.php');
       }
 
-      function create($post_data){
+      function create($user_data){
+        $user = new User($user_data);
+        $return = $user->create($user_data);
+        if($return == $_SESSION['error']){
+          header('Location: /b_map/users/register');
+        } else {
+          header('Location: /b_map/posts/home');
+        }
+      }
+
+
+      function login($user_data){
+        $resource = 'users';
+        $action = 'login';
+        $errorMessage = "";
+        // 入力チェックのプログラムを書く
+        if (!empty($user_data)) {
+          // var_dump("po");
+          // $email = htmlspecialchars($_POST['email']);
+          // ログインの処理
+          if (isset($user_data['email']) && $user_data['password'] != '') {
+            // モデルを呼び出す
+            $user = new User();
+            // モデルのprofilechgメソッドを実行する
+            $viewOptions = $user->login($user_data);
+            // var_dump($viewOptions);
+            //if文を書く
+            if ($viewOptions == NULL){
+              $errorMessage = "Please enter again.";
+              $resource = 'users';
+              $action = 'login';
+            }else{
+
+              $_SESSION['userid']=$viewOptions['userid'];
+              $_SESSION['nickname']=$viewOptions['nickname'];
+              $_SESSION['email']=$viewOptions['email'];
+              // $resource = 'posts';
+              // $action = 'home';
+
+              header('Location: ../posts/home');
+            }
+          }
+        }
+        require('views/layout/application.php');
 
       }
 
-      function login() {
-          $resource = 'users';
-          $action = 'login';
-          require('views/layout/application.php');
-      }
 
-      function logout(){
+      function logout($user_id){
+        $user = new User();
+        $return = $user->logout($user_id);
+        header('Location: /b_map/posts/home');
 
       }
 
       function profilechg($id){
-        // モデルを呼び出す
+
         $user = new User();
         // モデルのprofilechgメソッドを実行する
         $viewOptinons = $user->profilechg($id);
@@ -81,4 +124,6 @@
       }
 
    }
+ 
+
 ?>

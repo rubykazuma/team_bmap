@@ -7,9 +7,8 @@
 					<div class="row">
 						<div class="col-sm-3">
 							<h3 class="userName">
-								User Name
 								<!-- ログイン時にニックネームをセッション変数に格納する(未完成) -->
-								<!-- <?php echo $_SESSION['nickname']; ?> -->
+								<?php echo $_SESSION['nickname']; ?>
 							</h3>
 							<div class="editProfile">
 								<a href="/b_map/users/profilechg/<?php echo $id; ?>" class="btn btn-default">Edit Profile</a>

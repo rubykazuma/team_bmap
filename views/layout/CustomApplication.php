@@ -1,7 +1,7 @@
-<?php 
+<?php
     $adjust_string = '';
 
-    if (($action == 'profilechg') || ($action == 'gourmet') || ($action == 'spot') || ($action == 'edit') || ($action == 'delete')){
+    if (($action == 'profilechg') || ($action == 'gourmet') || ($action == 'spot') || ($action == 'edit') || ($action == 'delete') || ($action == 'choose')){
       $adjust_string = '../';
     }
 ?>
@@ -11,15 +11,15 @@
 <head>
   <meta charset="utf-8">
   <title>B-MAP</title>
-  <link rel="stylesheet" href="../webroot/assets/css/custombootstrap.css">
-  <link rel="stylesheet" href="../webroot/assets/js/bootstrap.js">
-  <link rel="stylesheet" href="../webroot/assets/css/bootstrap-combined.min.css">
+  <link rel="stylesheet" href="../<?php echo $adjust_string; ?>webroot/assets/css/custombootstrap.css">
+  <link rel="stylesheet" href="../<?php echo $adjust_string; ?>webroot/assets/js/bootstrap.js">
+  <link rel="stylesheet" href="../<?php echo $adjust_string; ?>webroot/assets/css/bootstrap-combined.min.css">
   <!-- <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"> -->
-  <link rel="stylesheet" href="../webroot/assets/css/base.css">
+  <link rel="stylesheet" href="../<?php echo $adjust_string; ?>webroot/assets/css/base.css">
   <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
   <!-- fabcon set -->
-  <link rel="icon" type="image/png" href="../webroot/assets/images/favi.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../<?php echo $adjust_string; ?>webroot/assets/images/favi.png" sizes="32x32">
 </head>
 
 <body>
@@ -35,14 +35,48 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href=""><span class="strong-title">B-MAP</span></a>
+          <a class="navbar-brand" href="/b_map/posts/home"><span class="strong-title">B-MAP</span></a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="" class="new"><spn class="glyphicon glyphicon-edit"></spn></a></li>
-            <li><a href="" class="user"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
-            <li><a href="" class="logn"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span></a></li>
+
+            <!-- ログインしている場合(新規投稿、個別ページ、ログアウトのリンクが有効) -->
+            <?php if (isset($_SESSION['userid']) && !empty($_SESSION['userid'])) { ?>
+              <li>
+                <a href="/b_map/posts/add" class="new">
+                  <spn class="glyphicon glyphicon-edit"></spn>
+                </a>
+              </li>
+              <li>
+                <a href="/b_map/posts/mypage/<?php echo $_SESSION['userid']; ?>" class="user">
+                  <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                </a>
+              </li>
+              <li>
+                <a href="/b_map/users/logout" class="logout">
+                  <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+                </a>
+              </li>
+            <?php } else { ?>
+            <!-- ログインしていない場合(ログインページのみリンクが有効) -->
+              <li>
+                <a href="" class="new">
+                  <spn class="glyphicon glyphicon-edit"></spn>
+                </a>
+              </li>
+              <li>
+                <a href="" class="user">
+                  <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                </a>
+              </li>
+              <li>
+                <a href="/b_map/users/login" class="login">
+                  <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+                </a>
+              </li>
+            <?php } ?>
+
           </ul>
         </div>
       </div>

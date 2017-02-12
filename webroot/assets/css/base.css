@@ -102,6 +102,16 @@ img{
     border: #a2d7d4;
 }
 
+.register-error{
+    color: red;
+    margin-bottom: 10px;
+}
+
+.login-error{
+    color: red;
+    margin-bottom: 10px;
+}
+
 /* ユーザー個別ページ */
 
 .userName{
@@ -410,4 +420,3 @@ img {
     max-width: 100%;
      height: auto;
 }
-
